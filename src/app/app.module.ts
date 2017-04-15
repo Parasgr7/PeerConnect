@@ -22,6 +22,7 @@ import { ConnectionComponent } from './connection/connection.component';
 import { FeedComponent } from './feed/feed.component';
 import { FriendComponent } from './friend/friend.component';
 import { SettingComponent } from './setting/setting.component';
+import {FriendService} from './feed/friend.service';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,7 @@ import { SettingComponent } from './setting/setting.component';
       }
    ])
   ],
-  providers: [RegisterService,AuthGuard],
+  providers: [RegisterService,AuthGuard,FriendService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
