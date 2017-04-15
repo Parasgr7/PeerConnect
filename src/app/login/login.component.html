@@ -1,0 +1,22 @@
+<form method="POST" #log="ngForm" (ngSubmit)="onlog(log.value)">
+
+    <div class=" form-group ">
+        <label>User Name</label>
+        <input type="text" name="username" required #name="ngModel" [ngModel]="entry.uname" class="form-control ">
+
+    </div>
+
+
+    <div class="form-group ">
+        <label>Password</label>
+        <input type="password" name="upassword" #password="ngModel" [ngModel]=" entry.password " required class="form-control ">
+    </div>
+
+
+
+    <div>
+        <button type="submit " [disabled]="!log.valid " class="btn btn-success ">Submit</button>
+
+    </div>
+
+</form>

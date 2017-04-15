@@ -1,0 +1,53 @@
+<h2>
+    SignUp</h2>
+<form #userform="ngForm" method="POST" novalidate (ngSubmit)="onsubmit(userform.value,userform.valid)  ">
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" name="name" required minlength="4" maxlength="10" #name="ngModel" [ngModel]="user.username" class="form-control">
+        <div *ngIf="name.errors && (name.dirty||name.touched)" class="alert alert-danger">
+            <div [hidden]="!name.errors.required">
+                Please enter your name
+            </div>
+            <div [hidden]="!name.errors.minlength">
+                Please enter atleast 4 character
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>E-Mail</label>
+        <input type="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" #email="ngModel" [ngModel]="user.email" class="form-control">
+        <div *ngIf="email.errors && (email.dirty||email.touched)" class="alert alert-danger">
+            <div [hidden]="!email.errors.required">
+                Please enter your email address
+            </div>
+            <div [hidden]="!email.errors.pattern">
+                Email is required and format should be <i>john@doe.com</i>.
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" name="password" [ngModel]="user.password" validateEqual="confirmPassword" reverse="true" required #password="ngModel" class="form-control">
+        <div [hidden]="password.valid || (password.pristine && !userform.submitted)" class="alert alert-danger">
+            Password is required
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Retype password</label>
+        <input type="password" name="username" [ngModel]="user.confirmPassword" required validateEqual="password" #confirmPassword="ngModel" class="form-control">
+        <div [hidden]="confirmPassword.valid ||  (confirmPassword.pristine && !userform.submitted)" class="alert alert-danger">
+            Password mismatch
+        </div>
+    </div>
+
+
+    <div>
+        <button type="submit" [disabled]="!userform.valid" class="btn btn-success">Submit</button>
+    </div>
+
+</form>
