@@ -1,22 +1,577 @@
-<form method="POST" #log="ngForm" (ngSubmit)="onlog(log.value)">
+<div id="content" class="site-content">
 
-    <div class=" form-group ">
-        <label>User Name</label>
-        <input type="text" name="username" required #name="ngModel" [ngModel]="entry.uname" class="form-control ">
 
+    <div id="cover-image">
+
+        <div id="cover-image-wrap" class="standard align-center">
+
+            <div id="cover-image-inner-wrap">
+
+                <div id="cover-image-copy">
+
+                    <div class="container">
+
+
+
+                        <h1 class="entry-title">Sign-in</h1>
+
+                        <div class="heading-lead">
+                            Prove your identity and Welcome to the world of peerConnect
+                        </div>
+
+
+
+
+
+                    </div>
+                    <!--.container-->
+                </div>
+                <!--#cover-image-copy-->
+            </div>
+        </div>
     </div>
 
+    <div id="printable-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 content-full-width">
+                    <div id="primary" class="content-area">
+                        <main id="main" class="site-main">
 
-    <div class="form-group ">
-        <label>Password</label>
-        <input type="password" name="upassword" #password="ngModel" [ngModel]=" entry.password " required class="form-control ">
+                            <article id="post-2250" class="post-2250 page type-page status-publish hentry">
+                                <header class="entry-header screen-reader-text">
+                                    <h1 class="entry-title">Sign-in</h1>
+                                </header>
+                                <div class="entry-content">
+
+
+                                    <div class="gears-login-wrap" id="gears-login-shortcode">
+
+                                        <div class="gears-social-connect">
+
+                                            <div class="gears-social-connect-heading">
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-6">
+                                                        <h3>
+                                                            SOCIAL MEDIA LOGIN </h3>
+                                                    </div>
+
+                                                </div>
+                                                <p>
+                                                    Sign in to our website with your favorite social media account. It is just one click away! </p>
+                                            </div>
+                                            <div class="gears-social-connect-btns">
+
+                                                <a title="Facebook Connect" class="social-connect fb btn btn-primary" href="http://flocks.dunhakdis.com/wp-admin/admin-ajax.php?action=gears_fb_connect">
+                                                    <i class="fa fa-facebook"></i> Facebook Connect </a>
+                                                <a class="social-connect gp btn btn-danger" href="http://flocks.dunhakdis.com/wp-admin/admin-ajax.php?action=clientConnectionInit">
+                                                    <i class="fa fa-google-plus"></i> Google Connect </a>
+                                            </div>
+                                        </div>
+                                        <!--.gears-social-connect-->
+
+                                        <div class="gears-login-links">
+
+                                            <ul>
+
+                                                <li class="current">
+
+                                                    Sign-in
+                                                </li>
+
+
+                                            </ul>
+
+                                        </div>
+                                        <!--.gears-login-links-->
+
+
+                                        <form method="POST" #log="ngForm" (ngSubmit)="onlog(log.value)">
+
+                                            <div class=" form-group ">
+                                                <p class="login-username">
+                                                    <label for="user_login">User Name</label>
+                                                    <input type="text" name="username" required #name="ngModel" [ngModel]="entry.uname" class="form-control ">
+
+                                                </p>
+
+
+                                            </div>
+
+
+                                            <div class="form-group ">
+                                                <p class="login-password">
+                                                    <label for="user_pass">Password</label>
+                                                    <input type="password" name="upassword" #password="ngModel" [ngModel]=" entry.password " required class="form-control ">
+                                                </p>
+                                            </div>
+
+
+
+                                            <div>
+                                                <p class="login-submit">
+                                                    <button type="submit " [disabled]="!log.valid " class="btn btn-success ">Submit</button>
+                                                </p>
+                                            </div>
+
+                                        </form>
+
+
+
+
+                                        <!--.gears-login-->
+
+                                    </div>
+                                    <!--.gears-login-wrap-->
+
+                                    <div class="gears-clearfix"></div>
+
+
+                                </div>
+                                <footer class="entry-footer">
+                                </footer>
+                            </article>
+                            <!-- #post-## -->
+                        </main>
+                    </div>
+                </div>
+                <div class="col-lg-3 hide">
+
+                    <div id="secondary" class="widget-area">
+
+
+                        <section id="text-3" class="widget widget_text">
+                            <div class="textwidget">
+                                <a href="https://themeforest.net/user/dunhakdis/portfolio?ref=dunhakdis" alt="ThemeForest" target="__blank"><img src="../../assets/wp-content/uploads/2016/12/AD.png" alt="ThemeForest" style="width:100%"></a>
+                            </div>
+                        </section>
+                        <section id="gears_social_media_widget-5" class="widget gears_social_media_widget">
+                            <h2 class="widget-title">Social Media</h2>
+                            <ul>
+
+                                <li>
+                                    <div class="gears-social-media-link facebook-wrap">
+
+
+                                        <a href="#" title="Facebook" class="facebook" data-hint="Follow us on Facebook">
+
+                                            <span class="fa fa-facebook">   </span>
+
+                                        </a>
+
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gears-social-media-link twitter-wrap">
+
+
+                                        <a href="#" title="Twitter" class="twitter" data-hint="Follow us on Twitter">
+
+                                            <span class="fa fa-twitter">   </span>
+
+                                        </a>
+
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gears-social-media-link instagram-wrap">
+
+
+                                        <a href="#" title="Instagram" class="instagram" data-hint="Follow us on Instagram">
+
+                                            <span class="fa fa-instagram">   </span>
+
+                                        </a>
+
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gears-social-media-link googleplus-wrap">
+
+
+                                        <a href="#" title="Google+" class="googleplus" data-hint="Follow us on G+">
+
+                                            <span class="fa fa-google-plus">   </span>
+
+                                        </a>
+
+
+                                    </div>
+                                </li>
+
+                            </ul>
+                            <div class="clearfix"></div>
+                        </section>
+                        <section id="mc4wp_form_widget-6" class="widget widget_mc4wp_form_widget">
+                            <h2 class="widget-title">Newsletter</h2>
+                            <script type="text/javascript">
+                                (function() {
+                                    if (!window.mc4wp) {
+                                        window.mc4wp = {
+                                            listeners: [],
+                                            forms: {
+                                                on: function(event, callback) {
+                                                    window.mc4wp.listeners.push({
+                                                        event: event,
+                                                        callback: callback
+                                                    });
+                                                }
+                                            }
+                                        }
+                                    }
+                                })();
+                            </script>
+                            <!-- MailChimp for WordPress v4.1.0 - https://wordpress.org/plugins/mailchimp-for-wp/ -->
+                            <form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-1779" method="post" data-id="1779" data-name="Form">
+                                <div class="mc4wp-form-fields">
+                                    <p style="margin-bottom: 5px;">
+                                        Inspiration, ideas, news and your feedback
+                                    </p>
+                                    <p>
+                                        <input type="email" name="EMAIL" placeholder="Your email address" required />
+                                    </p>
+                                    <div style="display: none;"><input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off" /></div><input type="hidden" name="_mc4wp_timestamp" value="1491061629" /><input type="hidden" name="_mc4wp_form_id" value="1779" /><input
+                                        type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1" /></div>
+                                <div class="mc4wp-response"></div>
+                            </form>
+                            <!-- / MailChimp for WordPress Plugin -->
+                        </section>
+                        <section id="gears_blog_post_widget-7" class="widget gears_blog_post_widget">
+                            <h2 class="widget-title">Recent Posts</h2>
+                            <ul>
+                                <li class="post-1809 post type-post status-publish format-standard has-post-thumbnail hentry category-black-monday category-creative category-web category-technology category-wordpress tag-creative tag-technology tag-web tag-wordpress">
+                                    <div class="gears-blog-posts-item">
+
+                                        <div class="gears-blog-posts-item-thumbnail">
+                                            <a title="The Honest Company’s not terrible but not very good 2016" href="../blog/the-honest-companys-not-terrible-but-not-very-good-2016/index.html">
+                                                <img width="150" height="150" src="../../assets/wp-content/uploads/2016/12/1-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" /> </a>
+                                        </div>
+
+                                        <div class="gears-blog-posts-item-details">
+
+                                            <div class="gears-blog-posts-item-details-title">
+                                                <a title="The Honest Company’s not terrible but not very good 2016" href="../blog/the-honest-companys-not-terrible-but-not-very-good-2016/index.html">
+                                                    <h3 class="title">The Honest Company’s not terrible but not very good 2016</h3>
+                                                </a>
+                                            </div>
+
+                                            <div class="gears-blog-posts-item-details-comment">
+                                                <a href="../blog/the-honest-companys-not-terrible-but-not-very-good-2016/index.html#respond" class="gears_blog_post_comment">
+								Leave a Comment							</a>
+                                            </div>
+
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </li>
+                                <li class="post-1810 post type-post status-publish format-image has-post-thumbnail hentry category-biometrics category-creative category-web category-technology category-wordpress tag-css-best-practices tag-programming tag-web-development post_format-post-format-image">
+                                    <div class="gears-blog-posts-item">
+
+                                        <div class="gears-blog-posts-item-thumbnail">
+                                            <a title="Protecting America’s critical infrastructure must remain a priority" href="../blog/protecting-americas-critical-infrastructure-must-remain-a-priority/index.html">
+                                                <img width="150" height="150" src="../../assets/wp-content/uploads/2016/12/4-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" /> </a>
+                                        </div>
+
+                                        <div class="gears-blog-posts-item-details">
+
+                                            <div class="gears-blog-posts-item-details-title">
+                                                <a title="Protecting America’s critical infrastructure must remain a priority" href="../blog/protecting-americas-critical-infrastructure-must-remain-a-priority/index.html">
+                                                    <h3 class="title">Protecting America’s critical infrastructure must remain a priority</h3>
+                                                </a>
+                                            </div>
+
+                                            <div class="gears-blog-posts-item-details-comment">
+                                                <a href="../blog/protecting-americas-critical-infrastructure-must-remain-a-priority/index.html#comments" class="gears_blog_post_comment">
+								Leave a Comment							</a>
+                                            </div>
+
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </li>
+                                <li class="post-1811 post type-post status-publish format-video has-post-thumbnail hentry category-creative category-web category-technology category-wordpress tag-best-buddypress-theme tag-creative tag-technology tag-wordpress post_format-post-format-video">
+                                    <div class="gears-blog-posts-item">
+
+                                        <div class="gears-blog-posts-item-thumbnail">
+                                            <a title="Uber swaps car icons for Star Wars ships with Rogue One promo" href="../blog/uber-swaps-car-icons-for-star-wars-ships-with-rogue-one-promo/index.html">
+                                                <img width="150" height="150" src="../../assets/wp-content/uploads/2016/12/2-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" /> </a>
+                                        </div>
+
+                                        <div class="gears-blog-posts-item-details">
+
+                                            <div class="gears-blog-posts-item-details-title">
+                                                <a title="Uber swaps car icons for Star Wars ships with Rogue One promo" href="../blog/uber-swaps-car-icons-for-star-wars-ships-with-rogue-one-promo/index.html">
+                                                    <h3 class="title">Uber swaps car icons for Star Wars ships with Rogue One promo</h3>
+                                                </a>
+                                            </div>
+
+                                            <div class="gears-blog-posts-item-details-comment">
+                                                <a href="../blog/uber-swaps-car-icons-for-star-wars-ships-with-rogue-one-promo/index.html#respond" class="gears_blog_post_comment">
+								Leave a Comment							</a>
+                                            </div>
+
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </li>
+                                <li class="post-1812 post type-post status-publish format-standard has-post-thumbnail hentry category-christmas category-creative category-web category-technology category-wordpress tag-best-buddypress-theme tag-flocks tag-web tag-wordpress">
+                                    <div class="gears-blog-posts-item">
+
+                                        <div class="gears-blog-posts-item-thumbnail">
+                                            <a title="Navdy’s heads-up display for any car windshield" href="../blog/navdys-heads-up-display-for-any-car-windshield/index.html">
+                                                <img width="150" height="150" src="../../assets/wp-content/uploads/2016/12/6-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" /> </a>
+                                        </div>
+
+                                        <div class="gears-blog-posts-item-details">
+
+                                            <div class="gears-blog-posts-item-details-title">
+                                                <a title="Navdy’s heads-up display for any car windshield" href="../blog/navdys-heads-up-display-for-any-car-windshield/index.html">
+                                                    <h3 class="title">Navdy’s heads-up display for any car windshield</h3>
+                                                </a>
+                                            </div>
+
+                                            <div class="gears-blog-posts-item-details-comment">
+                                                <a href="../blog/navdys-heads-up-display-for-any-car-windshield/index.html#respond" class="gears_blog_post_comment">
+								Leave a Comment							</a>
+                                            </div>
+
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </li>
+                                <li class="post-1808 post type-post status-publish format-standard has-post-thumbnail hentry category-creative category-web category-nanotech category-technology category-wordpress tag-buddypress tag-creative tag-flocks">
+                                    <div class="gears-blog-posts-item">
+
+                                        <div class="gears-blog-posts-item-thumbnail">
+                                            <a title="Bill Gates, Jeff Bezos and 18 others commit $1 billion to new cleantech fund, Breakthrough Energy Ventures" href="../blog/bill-gates-jeff-bezos-and-18-others-commit-1-billion-to-new-cleantech-fund-breakthrough-energy-ventures/index.html">
+                                                <img width="150" height="150" src="../../assets/wp-content/uploads/2016/12/8-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" /> </a>
+                                        </div>
+
+                                        <div class="gears-blog-posts-item-details">
+
+                                            <div class="gears-blog-posts-item-details-title">
+                                                <a title="Bill Gates, Jeff Bezos and 18 others commit $1 billion to new cleantech fund, Breakthrough Energy Ventures" href="../blog/bill-gates-jeff-bezos-and-18-others-commit-1-billion-to-new-cleantech-fund-breakthrough-energy-ventures/index.html">
+                                                    <h3 class="title">Bill Gates, Jeff Bezos and 18 others commit $1 billion to new cleantech fund, Breakthrough Energy Ventures</h3>
+                                                </a>
+                                            </div>
+
+                                            <div class="gears-blog-posts-item-details-comment">
+                                                <a href="../blog/bill-gates-jeff-bezos-and-18-others-commit-1-billion-to-new-cleantech-fund-breakthrough-energy-ventures/index.html#respond" class="gears_blog_post_comment">
+								Leave a Comment							</a>
+                                            </div>
+
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </li>
+                            </ul>
+
+                            <div class="clearfix"></div>
+
+                        </section>
+                        <section id="tag_cloud-4" class="widget widget_tag_cloud">
+                            <h2 class="widget-title">Popular Tags</h2>
+                            <div class="tagcloud"><a href='../blog/tag/best-buddypress-theme/index.html' class='tag-link-22 tag-link-position-1' title='4 topics' style='font-size: 22pt;'>Best BuddyPress Theme</a>
+                                <a href='../blog/tag/buddypress/index.html' class='tag-link-21 tag-link-position-2' title='4 topics' style='font-size: 22pt;'>BuddyPress</a>
+                                <a href='../blog/tag/creative/index.html' class='tag-link-31 tag-link-position-3' title='3 topics' style='font-size: 18.5pt;'>Creative</a>
+                                <a href='../blog/tag/css-best-practices/index.html' class='tag-link-35 tag-link-position-4' title='1 topic' style='font-size: 8pt;'>CSS Best Practices</a>
+                                <a href='../blog/tag/flocks/index.html' class='tag-link-23 tag-link-position-5' title='3 topics' style='font-size: 18.5pt;'>Flocks</a>
+                                <a href='../blog/tag/programming/index.html' class='tag-link-36 tag-link-position-6' title='1 topic' style='font-size: 8pt;'>Programming</a>
+                                <a href='../blog/tag/technology/index.html' class='tag-link-32 tag-link-position-7' title='4 topics' style='font-size: 22pt;'>Technology</a>
+                                <a href='../blog/tag/web/index.html' class='tag-link-33 tag-link-position-8' title='3 topics' style='font-size: 18.5pt;'>Web</a>
+                                <a href='../blog/tag/web-development/index.html' class='tag-link-34 tag-link-position-9' title='1 topic' style='font-size: 8pt;'>Web Development</a>
+                                <a href='../blog/tag/wordpress/index.html' class='tag-link-30 tag-link-position-10' title='4 topics' style='font-size: 22pt;'>WordPress</a></div>
+                        </section>
+
+                    </div>
+                    <!-- #secondary -->
+                </div>
+            </div>
+        </div>
     </div>
 
+</div>
+<!--container-->
 
 
-    <div>
-        <button type="submit " [disabled]="!log.valid " class="btn btn-success ">Submit</button>
+<!--#footer-before-to-action-->
 
+
+
+
+
+
+<div id="site-footer-widgets" class="footer-style-1 site-footer-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="widget-collections">
+                    <section id="text-2" class="widget col-md-3 col-sm-6 widget_text">
+                        <h2 class="widget-title">About peerConnect</h2>
+                        <div class="textwidget">
+                            <p>Flocks is the most advance BuddyPress theme up to date. It's pack with awesome features that will make your life easier when building a community or social networking website using WordPress.</p>
+                            <p>It has full support for the most popular plugins like BuddyPress, bbPress, and WooCommerce. It also comes with Slider Revolution and Visual Composer.</p>
+                        </div>
+                    </section>
+
+                    <section id="gears_social_media_widget-2" class="widget col-md-3 col-sm-6 gears_social_media_widget">
+                        <h2 class="widget-title">Social Media</h2>
+                        <ul>
+
+                            <li>
+                                <div class="gears-social-media-link facebook-wrap">
+
+
+                                    <a href="https://www.facebook.com/DSCOfficial/" title="Facebook" class="facebook" target="_blank" data-hint="Follow us on Facebook">
+
+                                        <span class="fa fa-facebook">   </span>
+
+                                    </a>
+
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="gears-social-media-link twitter-wrap">
+
+
+                                    <a href="#" title="Twitter" class="twitter" target="_blank" data-hint="Follow us on Twitter">
+
+                                        <span class="fa fa-twitter">   </span>
+
+                                    </a>
+
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="gears-social-media-link instagram-wrap">
+
+
+                                    <a href="#" title="Instagram" class="instagram" target="_blank" data-hint="Follow us on Instagram">
+
+                                        <span class="fa fa-instagram">   </span>
+
+                                    </a>
+
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="gears-social-media-link googleplus-wrap">
+
+
+                                    <a href="#" title="Google+" class="googleplus" target="_blank" data-hint="Follow us on G+">
+
+                                        <span class="fa fa-google-plus">   </span>
+
+                                    </a>
+
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="gears-social-media-link linkedin-wrap">
+
+
+                                    <a href="#" title="Linkedin" class="linkedin" target="_blank" data-hint="Visit our LinkedIn">
+
+                                        <span class="fa fa-linkedin">   </span>
+
+                                    </a>
+
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="gears-social-media-link email-wrap">
+
+
+                                    <a href="mailto:#" title="Email" class="email" target="_blank" data-hint="Send us an Email">
+
+                                        <span class="fa fa-envelope">   </span>
+
+                                    </a>
+
+
+                                </div>
+                            </li>
+
+                        </ul>
+                        <div class="clearfix"></div>
+                    </section>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 
-</form>
+<footer id="colophon" class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="site-info">
+
+                    <div class="row">
+
+                        <div id="site-copyright" class="col-xs-12 col-sm-8">
+
+                            <div class="row">
+
+                                <div class="col-xs-12 col-sm-4">
+
+                                    <div id="site-copytext">
+
+                                        Copyright &copy; 2017 <a href="../product-landing-page/index.html" title="Flocks Community Demo">
+							peerConnect						</a>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-xs-12 col-sm-8">
+
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-xs-12 col-sm-4">
+
+                            <div class="pull-right">
+
+                                <a href="../product-landing-page/index.html" title="Flocks Community Demo &mdash; Just another WordPress site">
+
+                                    <span id="footer-extratext">
+					
+					Build your network Wide
+					
+						&mdash; 
+					
+					peerConnect					
+					</span>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- .site-info -->
+            </div>
+        </div>
+    </div>
+</footer>

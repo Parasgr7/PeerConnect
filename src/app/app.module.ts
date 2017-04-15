@@ -18,6 +18,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {AuthGuard} from './guards/auth.guard';
+import { ConnectionComponent } from './connection/connection.component';
+import { FeedComponent } from './feed/feed.component';
+import { FriendComponent } from './friend/friend.component';
+import { SettingComponent } from './setting/setting.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import {AuthGuard} from './guards/auth.guard';
     ProfileComponent,
     NavbarComponent,
     HomeComponent,
-    DashboardComponent
+    DashboardComponent,
+    ConnectionComponent,
+    FeedComponent,
+    FriendComponent,
+    SettingComponent
   ],
   imports: [
     BrowserModule,
@@ -37,9 +45,17 @@ import {AuthGuard} from './guards/auth.guard';
      {path:'',component:HomeComponent},
      {path:'login',component: LoginComponent},
       {path:'register',component: RegisterComponent},
-      {path:'profile',component: ProfileComponent,canActivate: [AuthGuard]},
-      {path:'dashboard',component: DashboardComponent,canActivate: [AuthGuard]}
+      {path:'dashboard',component: DashboardComponent,canActivate: [AuthGuard],
+        children:[  {path:'feed',component:FeedComponent},
+                    {path:'profile',component:ProfileComponent},
+                    {path:'connection',component:ConnectionComponent},
+                    {path:'friends',component:FriendComponent},
+                    {path:'settings',component:SettingComponent}
+                    
+        
+                ]
 
+      }
    ])
   ],
   providers: [RegisterService,AuthGuard],

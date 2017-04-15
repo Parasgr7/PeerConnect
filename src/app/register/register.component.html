@@ -1,53 +1,259 @@
-<h2>
-    SignUp</h2>
-<form #userform="ngForm" method="POST" novalidate (ngSubmit)="onsubmit(userform.value,userform.valid)  ">
-    <div class="form-group">
-        <label>Name</label>
-        <input type="text" name="name" required minlength="4" maxlength="10" #name="ngModel" [ngModel]="user.username" class="form-control">
-        <div *ngIf="name.errors && (name.dirty||name.touched)" class="alert alert-danger">
-            <div [hidden]="!name.errors.required">
-                Please enter your name
-            </div>
-            <div [hidden]="!name.errors.minlength">
-                Please enter atleast 4 character
+<div id="printable-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 content-full-width">
+                <div id="primary" class="content-area">
+                    <main id="main" class="site-main">
 
-            </div>
+                        <article id="post-2250" class="post-2250 page type-page status-publish hentry">
+                            <header class="entry-header screen-reader-text">
+                                <h1 class="entry-title">Register</h1>
+                            </header>
+                            <div class="entry-content">
 
+                                <div id="buddypress">
+
+
+                                    <div class="page" id="register-page">
+                                        <div id="flocks-register-heading">
+                                            <h4>
+                                                Register </h4>
+                                            <p>
+                                                Joining our community is easy. Just fill in the fields below, and we&#039;ll get a new account set up for you in no time. You might also need to verify your email address after submitting the form below. </p>
+                                        </div>
+
+
+                                        <h2>
+                                            SignUp</h2>
+                                        <form #userform="ngForm" method="POST" novalidate (ngSubmit)="onsubmit(userform.value,userform.valid)  ">
+                                            <div class="form-group">
+
+                                                <label>Name</label>
+                                                <input type="text" name="name" required minlength="4" maxlength="10" #name="ngModel" [ngModel]="user.username" class="form-control">
+                                                <div *ngIf="name.errors && (name.dirty||name.touched)" class="alert alert-danger">
+                                                    <div [hidden]="!name.errors.required">
+                                                        Please enter your name
+                                                    </div>
+                                                    <div [hidden]="!name.errors.minlength">
+                                                        Please enter atleast 4 character
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <label>E-Mail</label>
+                                                <input type="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" #email="ngModel" [ngModel]="user.email" class="form-control">
+
+                                                <div *ngIf="email.errors && (email.dirty||email.touched)" class="alert alert-danger">
+                                                    <div [hidden]="!email.errors.required">
+                                                        Please enter your email address
+                                                    </div>
+                                                    <div [hidden]="!email.errors.pattern">
+                                                        Email is required and format should be <i>john@doe.com</i>.
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Password</label>
+                                                <input type="password" name="password" [ngModel]="user.password" validateEqual="confirmPassword" reverse="true" required #password="ngModel" class="form-control">
+                                                <div [hidden]="password.valid || (password.pristine && !userform.submitted)" class="alert alert-danger">
+                                                    Password is required
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Retype password</label>
+                                                <input type="password" name="username" [ngModel]="user.confirmPassword" required validateEqual="password" #confirmPassword="ngModel" class="form-control">
+                                                <div [hidden]="confirmPassword.valid ||  (confirmPassword.pristine && !userform.submitted)" class="alert alert-danger">
+                                                    Password mismatch
+                                                </div>
+                                            </div>
+
+
+                                            <div>
+                                                <button type="submit" [disabled]="!userform.valid" class="btn btn-success">Submit</button>
+                                            </div>
+
+                                        </form>
+
+                                    </div>
+
+
+                                </div>
+                                <!-- #buddypress -->
+                            </div>
+                            <footer class="entry-footer">
+                            </footer>
+                        </article>
+                        <!-- #post-## -->
+                    </main>
+                </div>
+            </div>
+            <!--.col-lg-9-->
+            <!--.col-lg-3-->
+        </div>
+        <!--.row-->
+    </div>
+    <!--.container-->
+</div>
+<!--#printable-content-->
+
+<!--container-->
+
+
+
+
+
+
+<div id="site-footer-widgets" class="footer-style-1 site-footer-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="widget-collections">
+                    <section id="text-2" class="widget col-md-3 col-sm-6 widget_text">
+                        <h2 class="widget-title">About &nbsp peerConnect</h2>
+                        <div class="textwidget">
+                            <p>Flocks is the most advance BuddyPress theme up to date. It's pack with awesome features that will make your life easier when building a community or social networking website using WordPress.</p>
+                            <p>It has full support for the most popular plugins like BuddyPress, bbPress, and WooCommerce. It also comes with Slider Revolution and Visual Composer.</p>
+                        </div>
+                    </section>
+
+                    <section id="gears_social_media_widget-2" class="widget col-md-3 col-sm-6 gears_social_media_widget">
+                        <h2 class="widget-title">Social Media</h2>
+                        <ul>
+
+                            <li>
+                                <div class="gears-social-media-link facebook-wrap">
+
+
+                                    <a href="https://www.facebook.com/DSCOfficial/" title="Facebook" class="facebook" target="_blank" data-hint="Follow us on Facebook">
+
+                                        <span class="fa fa-facebook">   </span>
+
+                                    </a>
+
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="gears-social-media-link twitter-wrap">
+
+
+                                    <a href="#" title="Twitter" class="twitter" target="_blank" data-hint="Follow us on Twitter">
+
+                                        <span class="fa fa-twitter">   </span>
+
+                                    </a>
+
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="gears-social-media-link instagram-wrap">
+
+
+                                    <a href="#" title="Instagram" class="instagram" target="_blank" data-hint="Follow us on Instagram">
+
+                                        <span class="fa fa-instagram">   </span>
+
+                                    </a>
+
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="gears-social-media-link googleplus-wrap">
+
+
+                                    <a href="#" title="Google+" class="googleplus" target="_blank" data-hint="Follow us on G+">
+
+                                        <span class="fa fa-google-plus">   </span>
+
+                                    </a>
+
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="gears-social-media-link linkedin-wrap">
+
+
+                                    <a href="#" title="Linkedin" class="linkedin" target="_blank" data-hint="Visit our LinkedIn">
+
+                                        <span class="fa fa-linkedin">   </span>
+
+                                    </a>
+
+
+                                </div>
+                            </li>
+
+
+
+                        </ul>
+                        <div class="clearfix"></div>
+                    </section>
+                </div>
+            </div>
         </div>
     </div>
+</div>
 
-    <div class="form-group">
-        <label>E-Mail</label>
-        <input type="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" #email="ngModel" [ngModel]="user.email" class="form-control">
-        <div *ngIf="email.errors && (email.dirty||email.touched)" class="alert alert-danger">
-            <div [hidden]="!email.errors.required">
-                Please enter your email address
+<footer id="colophon" class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="site-info">
+
+                    <div class="row">
+
+                        <div id="site-copyright" class="col-xs-12 col-sm-8">
+
+                            <div class="row">
+
+                                <div class="col-xs-12 col-sm-4">
+
+                                    <div id="site-copytext">
+
+                                        Copyright &copy; 2017 <a href="../product-landing-page/index.html" title="Flocks Community Demo">
+							peerConnect						</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-4">
+
+                            <div class="pull-right">
+
+                                <a href="../product-landing-page/index.html" title="Flocks Community Demo &mdash; Just another WordPress site">
+
+                                    <span id="footer-extratext">
+					
+					Build your Network wide
+					
+						&mdash;
+						 
+					peerConnect					
+					</span>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- .site-info -->
             </div>
-            <div [hidden]="!email.errors.pattern">
-                Email is required and format should be <i>john@doe.com</i>.
-            </div>
         </div>
     </div>
-
-    <div class="form-group">
-        <label>Password</label>
-        <input type="password" name="password" [ngModel]="user.password" validateEqual="confirmPassword" reverse="true" required #password="ngModel" class="form-control">
-        <div [hidden]="password.valid || (password.pristine && !userform.submitted)" class="alert alert-danger">
-            Password is required
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label>Retype password</label>
-        <input type="password" name="username" [ngModel]="user.confirmPassword" required validateEqual="password" #confirmPassword="ngModel" class="form-control">
-        <div [hidden]="confirmPassword.valid ||  (confirmPassword.pristine && !userform.submitted)" class="alert alert-danger">
-            Password mismatch
-        </div>
-    </div>
-
-
-    <div>
-        <button type="submit" [disabled]="!userform.valid" class="btn btn-success">Submit</button>
-    </div>
-
-</form>
+</footer>

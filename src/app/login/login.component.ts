@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
       this.login.storeUserData(data.token,data.user);
       console.log('Logged In');
 
-     this.router.navigate(['profile']);
+     this.router.navigate(['dashboard']);
 
      }
      else{

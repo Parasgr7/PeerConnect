@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from './../user.interface';
 import{RegisterService} from './register.service';
+import {Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -11,7 +12,7 @@ export class RegisterComponent implements OnInit {
  public user: User;
  arr=[];
  
-  constructor(private register:RegisterService) {}
+  constructor(private register:RegisterService,private router:Router) {}
 
   ngOnInit() {
     this.user = {
@@ -24,7 +25,16 @@ export class RegisterComponent implements OnInit {
  onsubmit(value:User,isValid:boolean)
  {
    console.log(value);
-   this.register.register(value).subscribe(bro => {this.arr=bro;console.log(bro);});
+   this.register.register(value).subscribe(bro => {
+     if(bro.success)
+     {
+       this.router.navigate(['/login']);
+
+     }else{
+       this.router.navigate(['/register']);
+
+     }
+   });
 
 
     }
