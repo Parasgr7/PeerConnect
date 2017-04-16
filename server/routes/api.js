@@ -65,9 +65,9 @@ router.post('/register', (req, res, next) => {
 
 });
 router.post('/authenticate', (req, res, next) => {
-    const username = req.body.username;
+    const email = req.body.email;
     const password = req.body.upassword;
-    User.getUserByUsername(username, (err, user) => {
+    User.getUserByEmail(email, (err, user) => {
 
         if (err) throw err;
 

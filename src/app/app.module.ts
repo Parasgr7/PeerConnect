@@ -6,6 +6,8 @@ import{BackendService} from'./backend.service';
 import {RouterModule,Routes} from '@angular/router';
 import {RegisterService} from './register/register.service';
 
+import{EqualValidator} from './custom-validator';
+
 import {LoginService} from './login/login.service';
 
 import {HomeService} from './home/home.service';
@@ -39,7 +41,7 @@ export const firebaseConfig = {
 };
 @NgModule({
   declarations: [
-  AppComponent,
+    AppComponent,
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
@@ -47,9 +49,10 @@ export const firebaseConfig = {
     HomeComponent,
     DashboardComponent,
     ConnectionComponent,
-    FeedComponent,
     FriendComponent,
     SettingComponent,
+    EqualValidator,
+    FeedComponent
   ],
   imports: [
     BrowserModule,
