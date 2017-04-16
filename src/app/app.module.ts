@@ -23,7 +23,20 @@ import { FeedComponent } from './feed/feed.component';
 import { FriendComponent } from './friend/friend.component';
 import { SettingComponent } from './setting/setting.component';
 import {FriendService} from './feed/friend.service';
+import {SettingService} from './setting/setting.service';
 
+ 
+import { AngularFireModule } from 'angularfire2'; 			
+ 
+export const firebaseConfig = {   
+  apiKey: "AIzaSyC7_hhXPUQ9sRcD32WLhQYdTPniv1U9E1o",
+    authDomain: "peerconnect-bc03b.firebaseapp.com",
+    databaseURL: "https://peerconnect-bc03b.firebaseio.com",
+    projectId: "peerconnect-bc03b",
+    storageBucket: "peerconnect-bc03b.appspot.com",
+    messagingSenderId: "513065070002"
+
+};
 @NgModule({
   declarations: [
   AppComponent,
@@ -36,12 +49,13 @@ import {FriendService} from './feed/friend.service';
     ConnectionComponent,
     FeedComponent,
     FriendComponent,
-    SettingComponent
+    SettingComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    AngularFireModule.initializeApp(firebaseConfig),
       RouterModule.forRoot([
      {path:'',component:HomeComponent},
      {path:'login',component: LoginComponent},
@@ -60,7 +74,7 @@ import {FriendService} from './feed/friend.service';
       }
    ])
   ],
-  providers: [RegisterService,AuthGuard,FriendService],
+  providers: [RegisterService,AuthGuard,FriendService,SettingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
