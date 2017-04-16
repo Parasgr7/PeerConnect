@@ -1,52 +1,51 @@
+<div id="printable-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9">
+                <div id="primary" class="content-area">
+                    <main id="main" class="site-main">
 
-    <div id="printable-content">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-9">
-                    <div id="primary" class="content-area">
-                        <main id="main" class="site-main">
+                        <article id="post-0" class="bp_members type-bp_members post-0 page type-page status-publish hentry">
+                            <header class="entry-header screen-reader-text">
+                                <h1 class="entry-title">Paras</h1>
+                            </header>
+                            <div class="entry-content">
 
-                            <article id="post-0" class="bp_members type-bp_members post-0 page type-page status-publish hentry">
-                                <header class="entry-header screen-reader-text">
-                                    <h1 class="entry-title">Paras</h1>
-                                </header>
-                                <div class="entry-content">
-
-                                    <div id="buddypress">
-
-
-                                        <div id="item-body">
+                                <div id="buddypress">
 
 
-                                            <div class="item-list-tabs no-ajax" id="subnav">
-
-                                            </div>
-                                            <!-- .item-list-tabs -->
+                                    <div id="item-body">
 
 
+                                        <div class="item-list-tabs no-ajax" id="subnav">
 
-                                            <div class="activity">
+                                        </div>
+                                        <!-- .item-list-tabs -->
 
 
 
-
-                                                <ul id="activity-stream" class="activity-list item-list">
-
-
-                                                    <li class="bbpress bbp_reply_create activity-item" id="activity-700">
-                                                        
-                                                     
-
-                                                        <div class="activity-content">
+                                        <div class="activity">
 
 
-                                                            <div class="activity-inner">
 
-                                                             <div *ngIf="data">
+
+                                            <ul id="activity-stream" class="activity-list item-list">
+
+
+                                                <li class="bbpress bbp_reply_create activity-item" id="activity-700">
+
+
+
+                                                    <div class="activity-content">
+
+
+                                                        <div class="activity-inner">
+
+                                                            <div *ngIf="data">
                                                                 <h2 class="page-header">{{data.name}}</h2>
                                                                 <ul class="list-group">
-                                                                <li class="list-group-item">Username:{{data.username}}</li>
-                                                                <li class="list-group-item">Email:{{data.email}}</li>
+                                                                    <li class="list-group-item">Username:{{data.username}}</li>
+                                                                    <li class="list-group-item">Email:{{data.email}}</li>
                                                                 </ul>
 
                                                             </div>
@@ -54,76 +53,74 @@
 
 
 
-                                                          
-
-                                                        </div>
 
 
+                                                    </div>
 
 
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <!-- .activity -->
 
 
+                                                </li>
+                                            </ul>
                                         </div>
-                                        <!-- #item-body -->
+                                        <!-- .activity -->
 
 
                                     </div>
-                                    <!-- #buddypress -->
+                                    <!-- #item-body -->
+
+
                                 </div>
-                                <footer class="entry-footer">
-                                </footer>
-                            </article>
-                            <!-- #post-## -->
-                        </main>
-                    </div>
+                                <!-- #buddypress -->
+                            </div>
+                            <footer class="entry-footer">
+                            </footer>
+                        </article>
+                        <!-- #post-## -->
+                    </main>
                 </div>
-                <!--.col-lg-9-->
-                <div class="col-lg-3">
-
-                    <div id="secondary" class="widget-area">
-
-
-                        <section id="bp_core_members_widget-5" class="widget widget_bp_core_members_widget buddypress widget">
-                            <h2 class="widget-title">Suggestions</h2>
-
-                          
-
-                            <ul id="members-list" class="item-list" aria-live="polite" aria-relevant="all" aria-atomic="true">
-
-
-                                <li class="vcard">
-                                    <div class="item-avatar">
-                                <img src="http://www.gravatar.com/avatar/0bb9e0b2374b5ac526291cdb6d293363?s=100&amp;r=g&amp;d=mm" class="avatar user-167-avatar avatar-100 photo" width="100" height="100" alt="Profile picture of Michael Kuhn" />
-                                    </div>
-
-                                    <div class="item">
-                                        <div class="item-title fn"><label>Paras</label></div>
-                                        <div class="item-meta">
-                                            <span class="activity" data-livestamp="2017-04-01T12:59:14+0000">active 3 hours, 6 minutes ago</span>
-                                        </div>
-                                    </div>
-                                </li>
-
-
-
-                            </ul>
-
-
-                        </section>
-
-                    </div>
-                    <!-- #secondary -->
-                </div>
-                <!--.col-lg-3-->
             </div>
-            <!--.row-->
+            <!--.col-lg-9-->
+            <div class="col-lg-3">
+
+                <div id="secondary" class="widget-area">
+
+
+                    <section id="bp_core_members_widget-5" class="widget widget_bp_core_members_widget buddypress widget">
+                        <h2 class="widget-title">Suggestions</h2>
+
+
+
+                        <ul id="members-list" class="item-list" aria-live="polite" aria-relevant="all" aria-atomic="true" *ngFor="let random of ranArr">
+
+
+                            <li class="vcard">
+                                <div class="item-avatar">
+                                    <img src="http://www.gravatar.com/avatar/0bb9e0b2374b5ac526291cdb6d293363?s=100&amp;r=g&amp;d=mm" class="avatar user-167-avatar avatar-100 photo" width="100" height="100" alt="Profile picture of Michael Kuhn" />
+                                </div>
+
+                                <div class="item">
+                                    <div class="item-title fn"><label>{{random.name}}</label></div>
+                                    <div class="item-meta">
+                                        <span class="activity">{{random.email}}</span>
+                                    </div>
+                                </div>
+                            </li>
+
+
+
+                        </ul>
+
+
+                    </section>
+
+                </div>
+                <!-- #secondary -->
+            </div>
+            <!--.col-lg-3-->
         </div>
-        <!--.container-->
+        <!--.row-->
     </div>
-    <!--#printable-content-->
-
-
+    <!--.container-->
+</div>
+<!--#printable-content-->

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {RegisterService} from './../register/register.service';
 
 @Component({
   selector: 'app-friend',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FriendComponent implements OnInit {
 
-  constructor() { }
+arr:Object;
+user=[];
+i:any;
+picks = [];
+
+  constructor(private peer:RegisterService) { }
 
   ngOnInit() {
+    this.peer.getFriends().subscribe(data=>
+            {     this.arr=data;
+                  
+            });
+    
+    
+
   }
+  
+  addFriend(val){
+    this.user.push(val);
+    console.log(this.user);
+}
+
 
 }

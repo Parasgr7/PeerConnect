@@ -14,9 +14,11 @@
                     background-color: #f6f8f9;
                     background-position: center center;
                     ;
-                    }
-                    li { display: inline-block; }
+                }
                 
+                li {
+                    display: inline-block;
+                }
             </style>
             <div id="cv-cover-photo">
                 <div id="cv-cover-photo-elements" class="container">
@@ -25,45 +27,50 @@
                     <!-- #item-buttons -->
                 </div>
             </div>
-        
+
             <div id="cv-avatar-navigation">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-4 col-sm-2">
-                            <div id="item-header-avatar">
-                                <a href="index.html">
-                                    <img src="../../assets/wp-content/uploads/avatars/37/5846e6202caf7-bpfull.png" class="avatar user-37-avatar avatar-325 photo" width="325" height="325" alt="Profile picture of Seamus" /> </a>
-                                <div id="members-single-user-displayed-name">
-                                    Paras </div>
+                        <nav class="navbar navbar-inverse">
+
+                            <div class="col-xs-4 col-sm-2">
+                                <div id="item-header-avatar">
+                                    <a href="index.html">
+                                        <img src="../../assets/wp-content/uploads/avatars/37/5846e6202caf7-bpfull.png" class="avatar user-37-avatar avatar-325 photo" width="325" height="325" alt="Profile picture of Seamus" /> </a>
+                                    <div id="members-single-user-displayed-name">
+                                        Paras </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-xs-8 col-sm-10">
-                          <div id="item-nav">
 
-                                        <div class="item-list-tabs no-ajax" id="object-nav">
-                                            <ul>
+                            <div class="col-xs-8 col-sm-10">
+                                <div id="item-nav">
 
-                                                <li id="activity-personal-li" ><label [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a id="user-activity" [routerLink]="['./feed']">Feeds</a></label></li>
-                                                <li id="xprofile-personal-li"><label [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a id="user-xprofile" [routerLink]="['./profile']">Profile</a></label></li>
-                                                <li id="friends-personal-li"><label  [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a id="user-friends" [routerLink]="['./connection']">Connections </a></label></li>
-                                                <li id="groups-personal-li"><label [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a id="user-groups" [routerLink]="['./friends']" >Friends</a></label></li>
-                                                <li id="forums-personal-li"><label [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a id="user-forums" [routerLink]="['./settings']">Settings</a></label></li>
+                                    <div class="item-list-tabs no-ajax" id="object-nav">
 
-                                            </ul>
-                                        </div>
+                                        <ul>
+                                            <li id="activity-personal-li"><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['./feed']">Feeds</a></li>
+                                            <li id="xprofile-personal-li"><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['./profile']">Profile</a></li>
+                                            <li id="friends-personal-li"><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['./connection']">Connections </a></li>
+                                            <li id="groups-personal-li"><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['./friends']">Friends</a></li>
+                                            <li id="forums-personal-li"><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['./settings']">Settings</a></li>
+
+                                        </ul>
+
                                     </div>
-                                   
+                                </div>
 
-                        </div>
+
+                            </div>
+                        </nav>
                     </div>
                     <!-- .row -->
                 </div>
                 <!-- .container-->
             </div>
-            
+
             <!-- #member-avatar-navigation-->
 
-         
+
             <!-- #item-header-content -->
         </div>
         <!-- #member-main-head-->
@@ -78,8 +85,8 @@
 
 </div>
 <!--container-->
-<div class="container"> 
-<router-outlet></router-outlet>
+<div class="container">
+    <router-outlet></router-outlet>
 </div>
 
 <div id="site-footer-widgets" class="footer-style-1 site-footer-section">
@@ -202,8 +209,7 @@
 
                                     <div id="site-copytext">
 
-                                        Copyright &copy; 2017 
-							peerConnect					
+                                        Copyright &copy; 2017 peerConnect
                                     </div>
 
                                 </div>

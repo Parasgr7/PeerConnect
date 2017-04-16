@@ -1,3 +1,15 @@
-<p>
-  friend works!
-</p>
+<div class="container " *ngFor="let res of arr">
+    <div class="row">
+        <div class="card col-lg-4 col-md-4 col-sm-3">
+            <img src="./../../assets/wp-content/uploads/2016/12/2-640x300.jpg" alt="Avatar" style="width:100; height: 100">
+            <div class="container">
+                <h4><b>{{res.username}}</b></h4>
+                <p>{{res.email}} &nbsp;&nbsp;&nbsp;
+                    <button type="button" (click)="addFriend(res.username)" class="btn btn-primary btn-md">Follow</button>
+                </p>
+
+            </div>
+        </div>
+    </div>
+    <br>
+</div>

@@ -49,6 +49,19 @@ getProfile(){
 
 }
 
+
+  getFriends():Observable<any> 
+  {
+    let headers= new Headers();
+  this.loadToken();
+  headers.append('Authorization',this.authToken);
+   
+   headers.append('Content-Type','application/json');
+
+    return this.http.get('http://localhost:3000/api/friends',{headers:headers}).map((res:Response)=>res.json());
+
+  }
+
  storeUserData(token,user)
  {
    localStorage.setItem('id_token',token);

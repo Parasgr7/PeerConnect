@@ -19,9 +19,14 @@ router.use(function(req, res, next) { //allow cross origin requests
     res.header("Access-Control-Allow-Credentials", true);
     next();
 });
-// declare axios for making http requests
-const axios = require('axios');
 
+let transporter = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+        user: 'parasgr484@gmail.com',
+        pass: 'evegaur40@'
+    }
+});
 
 router.post('/register', (req, res, next) => {
     let newUser = new User({
@@ -34,7 +39,25 @@ router.post('/register', (req, res, next) => {
         if (err) {
             res.json({ success: false, msg: 'Failed to register' });
         } else {
+
             res.json({ success: true, msg: 'Succesfully registered' });
+
+            let mailOptions = {
+                from: '"peerConnect" <parasgr484@gmail.com>', // sender address
+                to: req.body.email, // list of receivers
+                subject: 'Succesfull Signup', // Subject line 
+                html: '<b>Welcome to the world of peerConnect.Thanks for signup.We appreciate your effort and valuable time</b>.<a href="http://localhost:4200/login">Login</a>' // html body
+            };
+
+            // send mail with defined transport object
+            transporter.sendMail(mailOptions, (error, info) => {
+                if (error) {
+                    return console.log(error);
+                }
+                console.log('Message %s sent: %s', info.messageId, info.response);
+            });
+
+
         }
 
     });
@@ -86,5 +109,17 @@ router.get('/profile', passport.authenticate('jwt', { session: false }), (req, r
     res.json({ user: req.user });
 });
 
+router.get('/friends', passport.authenticate('jwt', { session: false }), (req, res, next) => {
+
+    var result = [];
+    User.find(function(err, data) {
+
+        data.forEach(function(user) {
+            result.push(user);
+        });
+
+        res.send(result);
+    });
+});
 
 module.exports = router;
