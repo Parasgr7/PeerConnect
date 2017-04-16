@@ -11,7 +11,7 @@ export class FriendService {
 
   constructor(private http:Http) { }
   url1:string='https://newsapi.org/v1/articles?source=techcrunch&sortBy=latest&apiKey=314d7740d67246d198122f60ac8b9a8e';
-  url2:string='https://newsapi.org/v1/articles?source=techcrunch&sortBy=top&apiKey=314d7740d67246d198122f60ac8b9a8e';
+  url2:string='https://newsapi.org/v1/articles?source=engadget&sortBy=latest&apiKey=314d7740d67246d198122f60ac8b9a8e';
 
     apiFetch():Observable<any> {
 
