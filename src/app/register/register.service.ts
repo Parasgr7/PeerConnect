@@ -13,6 +13,7 @@ export class RegisterService {
   authToken:any;
 
  user:any;
+ id:any;
 
   constructor(private http:Http) {}
 
@@ -26,10 +27,27 @@ export class RegisterService {
 
 
   }
+ setFriend(value)
+ {  const body= JSON.stringify(value);
+   let headers= new Headers();
+   this.loadToken();
+
+  headers.append('Authorization',this.authToken);
+
+   headers.append('Content-Type','application/json'); 
+   
+    return this.http.put('http://localhost:3000/api/setIndiFriend/'+this.id.id,body,{headers:headers}).map(res=>res.json());
+
+
+  }
+
+
+
 login(value:Entry)
 {
   const body= JSON.stringify(value);
    let headers= new Headers();
+
    headers.append('Content-Type','application/json');
    
     return this.http.post('http://localhost:3000/api/authenticate',body,{headers:headers})
@@ -62,6 +80,19 @@ getProfile(){
 
   }
 
+ getFri():Observable<any> 
+  {
+    let headers= new Headers();
+  this.loadToken();
+  headers.append('Authorization',this.authToken);
+   
+   headers.append('Content-Type','application/json');
+
+    return this.http.get('http://localhost:3000/api/setfriends/'+this.id.id,{headers:headers}).map((res:Response)=>res.json().oops);
+
+  }
+
+
  storeUserData(token,user)
  {
    localStorage.setItem('id_token',token);
@@ -83,7 +114,10 @@ getProfile(){
 
   loadToken(){
     const token=localStorage.getItem('id_token');
+    const user=localStorage.getItem('user');
     this.authToken=token; 
+    this.id=JSON.parse(user);
+    
   }
 
 }

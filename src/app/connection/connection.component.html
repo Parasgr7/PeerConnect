@@ -1,3 +1,41 @@
-<p>
-  connection works!
-</p>
+<div class="container">
+
+    <h2><b>Organisations:</b></h2>
+    <div class="container " *ngFor="let res of arr; let i=index">
+        <div class="row" *ngIf="res.market">
+            <div class="card col-lg-4 col-md-4 col-sm-3">
+                <img src="./../../assets/wp-content/uploads/2016/12/2-640x300.jpg" alt="Avatar" style="width:100; height: 100">
+                <div class="container">
+                    <h4><b>{{res.name}}</b></h4>
+                    <h4><b>{{res.market}}</b></h4>
+                    <h4><b>{{res.location}}</b></h4>
+                    <p>{{res.email}} &nbsp;&nbsp;&nbsp;
+                        <button type="button" (click)="addFriend(res)" class="btn btn-primary btn-md">Follow</button>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+</div>
+
+
+<div class="container">
+    <h2><b>Individual:</b></h2>
+    <div class="container " *ngFor="let res of arr; let i=index">
+        <div class="row" *ngIf="!(res.market)">
+            <div class="card col-lg-4 col-md-4 col-sm-3">
+                <img src="./../../assets/wp-content/uploads/2016/12/2-640x300.jpg" alt="Avatar" style="width:100; height: 100">
+                <div class="container">
+                    <h4><b>{{res.username}}</b></h4>
+                    <p>{{res.email}} &nbsp;&nbsp;&nbsp;
+                        <button type="button" (click)="addFriend(res)" class="btn btn-primary btn-md">Follow</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <br>
+    </div>
+</div>

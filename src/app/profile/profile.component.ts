@@ -37,7 +37,7 @@ fileList : FirebaseListObservable<Image[]>;
   ngOnInit() {
     this.profile.getProfile().subscribe(profile=>{
       this.data=profile.user;
-      console.log(this.data);
+      console.log(profile.user._id);
     },err=>{
       console.log(err);
       return false;

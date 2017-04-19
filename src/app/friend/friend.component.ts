@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+
+
 import {RegisterService} from './../register/register.service';
 
 @Component({
@@ -8,27 +10,27 @@ import {RegisterService} from './../register/register.service';
 })
 export class FriendComponent implements OnInit {
 
-arr:Object;
-user=[];
-i:any;
-picks = [];
+arr:any;
+leng:any;
 
   constructor(private peer:RegisterService) { }
 
   ngOnInit() {
-    this.peer.getFriends().subscribe(data=>
-            {     this.arr=data;
+
+    this.peer.getFri().subscribe(data=>
+            {    
+                this.arr=data;
+                console.log(this.arr);
+                this.leng=Object.keys(this.arr).length
+              
+              
                   
             });
-    
     
 
   }
   
-  addFriend(val){
-    this.user.push(val);
-    console.log(this.user);
-}
+ 
 
 
 }

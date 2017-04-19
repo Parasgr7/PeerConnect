@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const config = require('./config/database');
 const mongoose = require('mongoose');
-
+mongoose.Promise = require('bluebird');
 
 
 mongoose.connect(config.database);

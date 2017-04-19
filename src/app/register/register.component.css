@@ -1,10 +1,18 @@
-input.ng-invalid {
-    border-left: 5px solid red
+button.id {
+    background: #ededed;
+    border: 1px solid #ccc;
+    -webkit-box-shadow: 1px 1px 2px #ccc;
+    -moz-box-shadow: 1px 1px 2px #ccc;
+    box-shadow: 1px 1px 2px #ccc;
+    padding: 10px 30px;
+    border-radius: 3px;
+    cursor: pointer;
 }
 
-input.ng-valid {
-    border-left: 5px solid green
-}
-i {
-    color:Red
+button:focus {
+    background: #e0e0e0;
+    outline: none;
+    -webkit-box-shadow: inset 0px 0px 4px #ccc;
+    -moz-box-shadow: inset 0px 0px 4px #ccc;
+    box-shadow: inset 0px 0px 4px #ccc;
 }

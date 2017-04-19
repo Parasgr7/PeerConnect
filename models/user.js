@@ -1,26 +1,43 @@
 const mongoose = require('mongoose');
+
+mongoose.Promise = require('bluebird');
 const bcrypt = require('bcryptjs');
 
 const config = require('../config/database');
 
 const UserSchema = mongoose.Schema({
     name: {
-        type: String
+        type: String,
+
     },
     email: {
         type: String,
-        required: true
+
     },
     username: {
-        type: String,
-        required: true
+        type: String
+
     },
     password: {
         type: String,
-        required: true
+
+    },
+    market: {
+        type: String
+
+    },
+
+    location: {
+        type: String
+    },
+    oops: {
+        type: Array
     }
+
+
 });
-const User = module.exports = mongoose.model('users', UserSchema);
+const User = module.exports = mongoose.model('datas', UserSchema);
+
 module.exports.getUserById = function(id, callback) {
     User.findById(id, callback);
 
@@ -35,6 +52,7 @@ module.exports.getUserByEmail = function(email, callback) {
     User.findOne(query, callback);
 
 }
+
 module.exports.addUser = function(newUser, callback) {
     bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {

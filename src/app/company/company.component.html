@@ -1,0 +1,99 @@
+<h2>
+    SignUp</h2>
+<h3>as Organisation</h3>
+<form #userform="ngForm" method="POST" novalidate (ngSubmit)="onsubmit(userform.value,userform.valid)">
+
+    <div class="editfield field_1 field_name required-field visibility-public field_type_textbox">
+
+
+        <label for="field_1">Company Name</label>
+
+
+        <input id="field_1" name="name" type="text" aria-required="true" required minlength="5" maxlength="15" placeholder="Enter Company Name" #name="ngModel" [ngModel]="user.companyname" class="flocks_bp_edit_field">
+
+        <div *ngIf="name.errors && (name.dirty||name.touched)">
+            <div [hidden]="!name.errors.required">
+                <small><i>*Please enter your  company name</i></small>
+            </div>
+            <div [hidden]="!name.errors.minlength">
+                <small><i>*Please enter atleast 5 character</i></small>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="editfield field_1 field_name required-field visibility-public field_type_textbox">
+
+        <label>E-Mail</label>
+        <input type="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter EmailId" #email="ngModel" [ngModel]="user.email" class="flocks_bp_edit_field" aria-required="true">
+
+        <div *ngIf="email.errors && (email.dirty||email.touched)">
+            <div [hidden]="!email.errors.required">
+                <small><i>*Please enter your email address </i></small>
+            </div>
+            <div [hidden]="!email.errors.pattern">
+                <small><i>*Email is required and format should be </i>john@doe.com.</small>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="editfield field_1 field_name required-field visibility-public field_type_textbox">
+        <label>Password</label>
+        <input type="password" name="password" [ngModel]="user.password" validateEqual="confirmPassword" reverse="true" placeholder="Enter Password" required #password="ngModel" class="flocks_bp_edit_field" aria-required="true">
+        <div [hidden]="password.valid || (password.pristine && !userform.submitted)">
+            <small><i> *Password is required</i></small>
+        </div>
+    </div>
+
+
+    <div class="editfield field_2 field_name required-field visibility-public field_type_textbox">
+
+        <label>Retype password</label>
+        <input type="password" name="repassword" [ngModel]="user.confirmPassword" required validateEqual="password" placeholder="ReEnter Password" #confirmPassword="ngModel" class="flocks_bp_edit_field" aria-required="true">
+        <div [hidden]="confirmPassword.valid ||  (confirmPassword.pristine && !userform.submitted)">
+            <small><i>*Password mismatch</i></small>
+        </div>
+    </div>
+
+
+
+
+    <div class="editfield field_1 field_name required-field visibility-public field_type_textbox">
+
+
+        <label for="field_1">Location</label>
+        <input name="location" type="text" aria-required="true" required placeholder="Enter Company Name" #location="ngModel" [ngModel]="user.location" class="flocks_bp_edit_field">
+
+        <div *ngIf="location.errors && (location.dirty||location.touched)">
+            <div [hidden]="!location.errors.required">
+                <small><i>*Please enter your Company Location</i></small>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="editfield field_1 field_name required-field visibility-public field_type_textbox">
+
+
+        <label for="field_1">Markets</label>
+        <textarea id="field_1" name="market" aria-required="true" required rows="3" placeholder="Enter Market exposure and Working" #market="ngModel" [ngModel]="user.market" class="flocks_bp_edit_field"></textarea>
+
+        <div *ngIf="market.errors && (market.dirty||market.touched)">
+            <div [hidden]="!market.errors.required">
+                <small><i>*Please enter your  Market exposure</i></small>
+            </div>
+
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div>
+
+        <button type="submit" [disabled]="!userform.valid" class="btn btn-success">Submit</button>
+    </div>
+
+</form>

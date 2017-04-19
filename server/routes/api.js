@@ -33,9 +33,13 @@ router.post('/register', (req, res, next) => {
         name: req.body.name,
         email: req.body.email,
         username: req.body.username,
-        password: req.body.password
+        password: req.body.password,
+        market: req.body.market,
+        location: req.body.location
+
     });
     User.addUser(newUser, (err, user) => {
+        console.log(err);
         if (err) {
             res.json({ success: false, msg: 'Failed to register' });
         } else {
@@ -61,6 +65,7 @@ router.post('/register', (req, res, next) => {
         }
 
     });
+
 
 
 });
@@ -121,5 +126,38 @@ router.get('/friends', passport.authenticate('jwt', { session: false }), (req, r
         res.send(result);
     });
 });
+
+router.get('/setfriends/:id', passport.authenticate('jwt', { session: false }), (req, res, next) => {
+    var result = [];
+    User.getUserById(req.params.id, (err, user) => {
+
+        if (user._id) {
+
+            User.findOne({ '_id': req.params.id }, function(err, obj) { res.send(obj) });
+
+
+        } else {
+            res.json({ success: false });
+
+        }
+    });
+});
+
+router.put('/setIndiFriend/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
+
+    User.getUserById(req.params.id, (err, user) => {
+
+        if (user._id) {
+            User.findByIdAndUpdate(req.params.id, { $push: { oops: req.body } }, { safe: true, upsert: true, new: true },
+                function(err, model) {
+                    console.log(err);
+                });
+        } else {
+            res.json({ msg: 'NOT Done' });
+
+        }
+    });
+});
+
 
 module.exports = router;
