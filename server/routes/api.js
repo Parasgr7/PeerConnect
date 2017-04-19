@@ -127,8 +127,23 @@ router.get('/friends', passport.authenticate('jwt', { session: false }), (req, r
     });
 });
 
-router.get('/setfriends/:id', passport.authenticate('jwt', { session: false }), (req, res, next) => {
-    var result = [];
+router.get('/fetchFriend/:id', passport.authenticate('jwt', { session: false }), (req, res, next) => {
+
+    User.getUserById(req.params.id, (err, user) => {
+
+        if (user._id) {
+
+            User.findOne({ '_id': req.params.id }, function(err, obj) { res.send(obj) });
+
+
+        } else {
+            res.json({ success: false });
+
+        }
+    });
+});
+router.get('/fetchCompany/:id', passport.authenticate('jwt', { session: false }), (req, res, next) => {
+
     User.getUserById(req.params.id, (err, user) => {
 
         if (user._id) {
@@ -143,21 +158,33 @@ router.get('/setfriends/:id', passport.authenticate('jwt', { session: false }), 
     });
 });
 
-router.put('/setIndiFriend/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
+router.put('/setFriend/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
 
     User.getUserById(req.params.id, (err, user) => {
 
         if (user._id) {
-            User.findByIdAndUpdate(req.params.id, { $push: { oops: req.body } }, { safe: true, upsert: true, new: true },
-                function(err, model) {
-                    console.log(err);
-                });
+            User.findByIdAndUpdate(req.params.id, { $push: { friend: req.body } }, { safe: true, upsert: true, new: true },
+                function(err, model) {});
         } else {
             res.json({ msg: 'NOT Done' });
 
         }
     });
 });
+router.put('/setCompany/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
+
+    User.getUserById(req.params.id, (err, user) => {
+
+        if (user._id) {
+            User.findByIdAndUpdate(req.params.id, { $push: { company: req.body } }, { safe: true, upsert: true, new: true },
+                function(err, model) {});
+        } else {
+            res.json({ msg: 'NOT Done' });
+
+        }
+    });
+});
+
 
 
 module.exports = router;

@@ -36,7 +36,20 @@ export class RegisterService {
 
    headers.append('Content-Type','application/json'); 
    
-    return this.http.put('http://localhost:3000/api/setIndiFriend/'+this.id.id,body,{headers:headers}).map(res=>res.json());
+    return this.http.put('http://localhost:3000/api/setFriend/'+this.id.id,body,{headers:headers}).map(res=>res.json());
+
+
+  }
+  setCompany(value)
+ {  const body= JSON.stringify(value);
+   let headers= new Headers();
+   this.loadToken();
+
+  headers.append('Authorization',this.authToken);
+
+   headers.append('Content-Type','application/json'); 
+   
+    return this.http.put('http://localhost:3000/api/setCompany/'+this.id.id,body,{headers:headers}).map(res=>res.json());
 
 
   }
@@ -80,7 +93,7 @@ getProfile(){
 
   }
 
- getFri():Observable<any> 
+ fetchFriend():Observable<any> 
   {
     let headers= new Headers();
   this.loadToken();
@@ -88,7 +101,18 @@ getProfile(){
    
    headers.append('Content-Type','application/json');
 
-    return this.http.get('http://localhost:3000/api/setfriends/'+this.id.id,{headers:headers}).map((res:Response)=>res.json().oops);
+    return this.http.get('http://localhost:3000/api/fetchFriend/'+this.id.id,{headers:headers}).map((res:Response)=>res.json().friend);
+
+  }
+fetchCompany():Observable<any> 
+  {
+    let headers= new Headers();
+  this.loadToken();
+  headers.append('Authorization',this.authToken);
+   
+   headers.append('Content-Type','application/json');
+
+    return this.http.get('http://localhost:3000/api/fetchCompany/'+this.id.id,{headers:headers}).map((res:Response)=>res.json().company);
 
   }
 

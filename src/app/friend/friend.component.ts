@@ -10,21 +10,27 @@ import {RegisterService} from './../register/register.service';
 })
 export class FriendComponent implements OnInit {
 
-arr:any;
-leng:any;
+arr1:any;
+arr2:any;
+lengthCompany:any;
+
+lengthFriend:any;
 
   constructor(private peer:RegisterService) { }
 
   ngOnInit() {
 
-    this.peer.getFri().subscribe(data=>
+    this.peer.fetchFriend().subscribe(data=>
             {    
-                this.arr=data;
-                console.log(this.arr);
-                this.leng=Object.keys(this.arr).length
+                this.arr1=data;
+                this.lengthFriend=Object.keys(this.arr1).length;
               
+            });
+    this.peer.fetchCompany().subscribe(data=>
+            {    
+                this.arr2=data;
+                this.lengthCompany=Object.keys(this.arr2).length;
               
-                  
             });
     
 

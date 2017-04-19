@@ -41,6 +41,12 @@ addFriend(val){
       console.log(data);
 
     });
+}
+
+addCompany(val){
+
+    this.peer.setCompany(val).subscribe(data=>{});
+
 
 }
 
