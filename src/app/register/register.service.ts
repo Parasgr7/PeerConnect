@@ -116,6 +116,33 @@ fetchCompany():Observable<any>
 
   }
 
+refCompany(val1,val2,val3):Observable<any>
+{ const body=JSON.stringify({"mail1": val1, "mail2": val2,"user":this.id.name});
+   let headers= new Headers();
+ this.loadToken();
+   headers.append('Content-Type','application/json');
+
+  headers.append('Authorization',this.authToken);
+   
+    return this.http.post('http://localhost:3000/api/refCompany',body,{headers:headers})
+          .map(res=>res.json());
+
+
+}
+refIndividual(val1,val2):Observable<any>
+{const body=JSON.stringify({"mail1": val1, "mail2": val2,"user":this.id.name});
+   let headers= new Headers();
+ this.loadToken();
+   headers.append('Content-Type','application/json');
+
+  headers.append('Authorization',this.authToken);
+   
+    return this.http.post('http://localhost:3000/api/refIndividual',body,{headers:headers})
+          .map(res=>res.json());
+
+
+}
+
 
  storeUserData(token,user)
  {

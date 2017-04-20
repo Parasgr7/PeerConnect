@@ -15,6 +15,8 @@ arr2:any;
 lengthCompany:any;
 
 lengthFriend:any;
+comp:any;
+indi:any;
 
   constructor(private peer:RegisterService) { }
 
@@ -33,6 +35,26 @@ lengthFriend:any;
               
             });
     
+
+  }
+  refCompany(value,name)
+  {
+this.comp=(<HTMLInputElement>document.getElementById('company')).value
+console.log(value);
+
+this.peer.refCompany(value,this.comp,name).subscribe((data)=>{
+  console.log(data);
+});
+  }
+
+  refIndividual(val)
+  {
+
+this.indi=(<HTMLInputElement>document.getElementById('individual')).value
+console.log(val);
+this.peer.refIndividual(val,this.indi).subscribe((data)=>{
+  console.log(data);
+});
 
   }
   

@@ -186,5 +186,43 @@ router.put('/setCompany/:id', passport.authenticate('jwt', { session: false }), 
 });
 
 
+router.post('/refIndividual', passport.authenticate('jwt', { session: false }), (req, res) => {
+
+
+    let mailOptions = {
+        from: '"peerConnect" <parasgr484@gmail.com>', // sender address
+        to: req.body.mail1, // list of receivers
+        subject: 'Reference through peerConnect', // Subject line 
+        html: '<b>You have been refered to</b>' + req.body.user + 'by Company ' // html body
+    };
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return console.log(error);
+        }
+        console.log('Message %s sent: %s', info.messageId, info.response);
+    });
+
+});
+router.post('/refCompany', passport.authenticate('jwt', { session: false }), (req, res) => {
+
+    let mailOptions = {
+        from: '"peerConnect" <parasgr484@gmail.com>', // sender address
+        to: req.body.mail1, // list of receivers
+        subject: 'Reference through peerConnect', // Subject line 
+        html: '<b>You have been refered by</b>' + req.body.user + '<b>to Company</b>' // html body
+    };
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return console.log(error);
+        }
+        console.log('Message %s sent: %s', info.messageId, info.response);
+    });
+
+});
+
 
 module.exports = router;

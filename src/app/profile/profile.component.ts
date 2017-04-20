@@ -54,7 +54,7 @@ fileList : FirebaseListObservable<Image[]>;
                       this.numbersArr.push(j);
                   }
                 
-                   while (this.picks.length <5)
+                   while (this.picks.length <10)
                    {
                         this.randomIndex = Math.floor(Math.random() * this.numbersArr.length);
                         

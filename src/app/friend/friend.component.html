@@ -10,7 +10,17 @@
                         <h4><b>{{res.market}}</b></h4>
                         <h4><b>{{res.location}}</b></h4>
                         <p>{{res.email}} &nbsp;&nbsp;&nbsp;</p>
+                        <h3>Refer to Individual</h3>
+                        <p>
 
+                            <select>   
+                                <option selected="selected" disabled>Individuals</option>
+                                <option *ngFor="let res of arr1" id="individual" value={{res.email}}>{{res.name}}</option>
+ 
+                             </select>
+                            <button (click)="refIndividual(res.email)">Refer</button>
+
+                        </p>
                     </div>
                 </div>
             </div>
@@ -33,6 +43,18 @@
                         <h4><b>{{res.name}}</b></h4>
                         <h4><b>{{res.username}}</b></h4>
                         <p>{{res.email}} &nbsp;&nbsp;&nbsp;</p>
+                        <h3>Refer to Company</h3>
+                        <p>
+
+                            <select>  
+                                 <option selected="selected" disabled>Companies</option>
+                                <option *ngFor="let res of arr2" id="company" value={{res.email}}>{{res.name}}</option>
+ 
+                            </select>
+                            <button (click)="refCompany(res.email)">Refer</button>
+
+                        </p>
+
 
                     </div>
                 </div>
