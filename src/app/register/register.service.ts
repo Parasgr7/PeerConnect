@@ -143,6 +143,36 @@ refIndividual(val1,val2):Observable<any>
 
 }
 
+complete(val1)
+{
+      const body= JSON.stringify(val1);
+     
+        let headers= new Headers();
+        this.loadToken();
+        headers.append('Content-Type','application/json'); 
+
+  headers.append('Authorization',this.authToken);
+   
+          return this.http.put('http://localhost:3000/api/complete/'+this.id.id,body,{headers:headers})
+          .map(res=>res.json());
+
+}
+
+
+delete()
+{
+
+        let headers= new Headers();
+        this.loadToken();
+        headers.append('Content-Type','application/json'); 
+
+  headers.append('Authorization',this.authToken);
+   
+          return this.http.get('http://localhost:3000/api/delete',{headers:headers})
+          .map(res=>res.json());
+
+
+}
 
  storeUserData(token,user)
  {

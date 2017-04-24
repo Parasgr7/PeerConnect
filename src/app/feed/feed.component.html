@@ -1,165 +1,52 @@
 <div class="container">
-    <br>
+    <div class="row">
+        <div class="col-12 col-md-4 col-lg-3" *ngFor="let res of dada">
 
-    <div class="container" *ngFor="let res of dada">
-        <div class="row">
-            <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
-                <div class="panel panel-default bootcards-media">
-                    <div class="panel-body row">
-                        <div class="row">
-                            <div class="col-xs-2">
-                                <img id="logo" src="https://github.com/taulantspahiu/Bootcards-Examples/blob/master/twitter_card/images/logo.jpg?raw=true">
-                            </div>
-                            <div class="col-xs-10">
-                                <div class="row">
-                                    <p id="title">
-                                        PeerConnect<span class="inTitle">{{res.publishedAt}}</span>
-                                    </p>
-                                </div>
-                                <div class="row heading">
-                                    <h5>{{res.author}} </h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row body-card">
-                            <div class="col-xs-4">
-                                <img src={{res.urlToImage}} width="300" height="500">
-                            </div>
-                            <div class="col-xs-8">
-                                <h4>{{res.title}}</h4>
-                                <h6>{{res.description}}</h6>
-
-                                <a href={{res.url}} target="_blank">...Click to read more</a>
-
-                            </div>
-                        </div>
-                    </div>
-
+            <div class="card">
+                <img class="card-img-top" src="{{res.urlToImage}}" alt="Loading...">
+                <div class="card-block">
+                    <h4 class="card-title">{{res.title}}</h4>
+                    <p class="card-text">{{res.description}}</p>
+                    <a href={{res.url}} target="_blank">...Click to read more</a>
                 </div>
+
+            </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3" *ngFor="let res of dara">
+
+            <div class="card">
+                <img class="card-img-top" src="{{res.urlToImage}}" alt="Loading...">
+                <div class="card-block">
+                    <h4 class="card-title">{{res.title}}</h4>
+                    <p class="card-text">{{res.description}}</p>
+                    <a href={{res.url}} target="_blank">...Click to read more</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3" *ngFor="let res of data">
+
+            <div class="card">
+                <img class="card-img-top" src="{{res.urlToImage}}" alt="Loading...">
+                <div class="card-block">
+                    <h4 class="card-title">{{res.title}}</h4>
+                    <p class="card-text">{{res.description}}</p>
+                    <a href={{res.url}} target="_blank">...Click to read more</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3" *ngFor="let res of daza">
+
+            <div class="card">
+                <img class="card-img-top" src="{{res.urlToImage}}" alt="Loading....">
+                <div class="card-block">
+                    <h4 class="card-title">{{res.title}}</h4>
+                    <p class="card-text">{{res.description}}</p>
+                    <a href={{res.url}} target="_blank">...Click to read more</a>
+                </div>
+
             </div>
         </div>
     </div>
-
-    <div class="container" *ngFor="let res of dara">
-        <div class="row">
-            <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
-                <div class="panel panel-default bootcards-media">
-                    <div class="panel-body row">
-                        <div class="row">
-                            <div class="col-xs-2">
-                                <img id="logo" src="https://github.com/taulantspahiu/Bootcards-Examples/blob/master/twitter_card/images/logo.jpg?raw=true">
-                            </div>
-                            <div class="col-xs-10">
-                                <div class="row">
-                                    <p id="title">
-                                        PeerConnect<span class="inTitle">{{res.publishedAt}}</span>
-                                    </p>
-                                </div>
-                                <div class="row heading">
-                                    <h5>{{res.author}} </h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row body-card">
-                            <div class="col-xs-4">
-                                <img src={{res.urlToImage}} width="300" height="500">
-                            </div>
-                            <div class="col-xs-8">
-                                <h4>{{res.title}}</h4>
-                                <h6>{{res.description}}</h6>
-
-                                <a href={{res.url}} target="_blank">...Click to read more</a>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="container-fluid" *ngFor="let res of data">
-        <div class="row">
-            <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
-                <div class="panel panel-default bootcards-media">
-                    <div class="panel-body row">
-                        <div class="row">
-                            <div class="col-xs-2">
-                                <img id="logo" src="https://github.com/taulantspahiu/Bootcards-Examples/blob/master/twitter_card/images/logo.jpg?raw=true">
-                            </div>
-                            <div class="col-xs-10">
-                                <div class="row">
-                                    <p id="title">
-                                        PeerConnect<span class="inTitle">{{res.publishedAt}}</span>
-                                    </p>
-                                </div>
-                                <div class="row heading">
-                                    <h5>{{res.author}} </h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row body-card">
-                            <div class="col-xs-4">
-                                <img src={{res.urlToImage}} width="300" height="500">
-                            </div>
-                            <div class="col-xs-8">
-                                <h4>{{res.title}}</h4>
-
-                                <h6>{{res.description}}</h6>
-                                <a href={{res.url}} target="_blank">...Click to read more</a>
-
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container" *ngFor="let res of daza">
-        <div class="row">
-            <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
-                <div class="panel panel-default bootcards-media">
-                    <div class="panel-body row">
-                        <div class="row">
-                            <div class="col-xs-2">
-                                <img id="logo" src="https://github.com/taulantspahiu/Bootcards-Examples/blob/master/twitter_card/images/logo.jpg?raw=true">
-                            </div>
-                            <div class="col-xs-10">
-                                <div class="row">
-                                    <p id="title">
-                                        PeerConnect<span class="inTitle">{{res.publishedAt}}</span>
-                                    </p>
-                                </div>
-                                <div class="row heading">
-                                    <h5>{{res.author}} </h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row body-card">
-                            <div class="col-xs-4">
-                                <img src={{res.urlToImage}} width="300" height="500">
-                            </div>
-                            <div class="col-xs-8">
-                                <h4>{{res.title}}</h4>
-                                <h6>{{res.description}}</h6>
-
-                                <a href={{res.url}} target="_blank">...Click to read more</a>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
 </div>

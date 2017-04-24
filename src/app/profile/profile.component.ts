@@ -73,26 +73,7 @@ fileList : FirebaseListObservable<Image[]>;
     
     
   }
-    upload() {
-        let storageRef = firebase.storage().ref();
+ 
 
-        let success = false;
-        for (let selectedFile of [(<HTMLInputElement>document.getElementById('file')).files[0]]) {
-            console.log(selectedFile);
-            let router = this.router;
-            let af = this.af;
-            let folder = this.folder;
-            let path = `/${this.folder}/${selectedFile.name}`;
-            var iRef = storageRef.child(path);
-            iRef.put(selectedFile).then((snapshot) => {
-                console.log('Uploaded a blob or file! Now storing the reference at',`/${this.folder}/images/`);
-              this.dp=snapshot.downloadURL;
-
-            });
-            
-        }
-        
-
-}
 
 }

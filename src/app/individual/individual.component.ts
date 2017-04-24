@@ -16,7 +16,8 @@ export class IndividualComponent implements OnInit {
   constructor(private register:RegisterService,private router:Router) { }
 
   ngOnInit() {
-      this.user = {     companyname:'',
+      this.user = {    
+                       companyname:'',
                         username: '',
                         email: '',
                         password: '',

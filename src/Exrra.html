@@ -1,0 +1,362 @@
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            <a class="navbar-brand">PeerConnect</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/']">Home</a></li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li *ngIf="auth.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/dashboard']">Dashboard</a></li>
+
+                <li *ngIf="!auth.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/login']">Login</a></li>
+                <li *ngIf="!auth.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/register']">Register</a></li>
+                <li *ngIf="auth.loggedIn()"><a (click)="logoutClick()" href="#">Logout</a></li>
+            </ul>
+
+        </div>
+
+    </div>
+</nav>
+---------------------------------------------------------
+<ul>
+
+    <li id="activity-personal-li abc"><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['./feed']">Feeds</a></li>
+    <li id="xprofile-personal-li "><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['./profile']">Profile</a></li>
+    <li id="friends-personal-li"><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['./connection']">Find Connections </a></li>
+    <li id="groups-personal-li"><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['./friends']">Friends</a></li>
+    <li id="forums-personal-li"><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['./settings']">Settings</a></li>
+
+</ul>
+---------------------------------------------------------- Setting.html
+<button (click)="delete()">Delete Account</button> --------------------------------------------------------- 24/April
+
+<div class="container">
+    <br>
+
+    <div class="container" *ngFor="let res of dada">
+        <div class="row">
+            <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+                <div class="panel panel-default bootcards-media">
+                    <div class="panel-body row">
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <img id="logo" src="https://github.com/taulantspahiu/Bootcards-Examples/blob/master/twitter_card/images/logo.jpg?raw=true">
+                            </div>
+                            <div class="col-xs-10">
+                                <div class="row">
+                                    <p id="title">
+                                        PeerConnect<span class="inTitle">{{res.publishedAt}}</span>
+                                    </p>
+                                </div>
+                                <div class="row heading">
+                                    <h5>{{res.author}} </h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row body-card">
+                            <div class="col-xs-4">
+                                <img src={{res.urlToImage}} width="300" height="500">
+                            </div>
+                            <div class="col-xs-8">
+                                <h4>{{res.title}}</h4>
+                                <h6>{{res.description}}</h6>
+
+                                <a href={{res.url}} target="_blank">...Click to read more</a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" *ngFor="let res of dara">
+        <div class="row">
+            <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+                <div class="panel panel-default bootcards-media">
+                    <div class="panel-body row">
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <img id="logo" src="https://github.com/taulantspahiu/Bootcards-Examples/blob/master/twitter_card/images/logo.jpg?raw=true">
+                            </div>
+                            <div class="col-xs-10">
+                                <div class="row">
+                                    <p id="title">
+                                        PeerConnect<span class="inTitle">{{res.publishedAt}}</span>
+                                    </p>
+                                </div>
+                                <div class="row heading">
+                                    <h5>{{res.author}} </h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row body-card">
+                            <div class="col-xs-4">
+                                <img src={{res.urlToImage}} width="300" height="500">
+                            </div>
+                            <div class="col-xs-8">
+                                <h4>{{res.title}}</h4>
+                                <h6>{{res.description}}</h6>
+
+                                <a href={{res.url}} target="_blank">...Click to read more</a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid" *ngFor="let res of data">
+        <div class="row">
+            <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+                <div class="panel panel-default bootcards-media">
+                    <div class="panel-body row">
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <img id="logo" src="https://github.com/taulantspahiu/Bootcards-Examples/blob/master/twitter_card/images/logo.jpg?raw=true">
+                            </div>
+                            <div class="col-xs-10">
+                                <div class="row">
+                                    <p id="title">
+                                        PeerConnect<span class="inTitle">{{res.publishedAt}}</span>
+                                    </p>
+                                </div>
+                                <div class="row heading">
+                                    <h5>{{res.author}} </h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row body-card">
+                            <div class="col-xs-4">
+                                <img src={{res.urlToImage}} width="300" height="500">
+                            </div>
+                            <div class="col-xs-8">
+                                <h4>{{res.title}}</h4>
+
+                                <h6>{{res.description}}</h6>
+                                <a href={{res.url}} target="_blank">...Click to read more</a>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" *ngFor="let res of daza">
+        <div class="row">
+            <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+                <div class="panel panel-default bootcards-media">
+                    <div class="panel-body row">
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <img id="logo" src="https://github.com/taulantspahiu/Bootcards-Examples/blob/master/twitter_card/images/logo.jpg?raw=true">
+                            </div>
+                            <div class="col-xs-10">
+                                <div class="row">
+                                    <p id="title">
+                                        PeerConnect<span class="inTitle">{{res.publishedAt}}</span>
+                                    </p>
+                                </div>
+                                <div class="row heading">
+                                    <h5>{{res.author}} </h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row body-card">
+                            <div class="col-xs-4">
+                                <img src={{res.urlToImage}} width="300" height="500">
+                            </div>
+                            <div class="col-xs-8">
+                                <h4>{{res.title}}</h4>
+                                <h6>{{res.description}}</h6>
+
+                                <a href={{res.url}} target="_blank">...Click to read more</a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+---------------------------------------------------------*****************---------------------------------------------------------
+
+
+<div id="cv-avatar-navigation">
+    <div class="container">
+        <div class="row">
+            <nav class="navbar navbar-inverse">
+
+                <div class="col-xs-4 col-sm-2">
+                    <div id="item-header-avatar">
+
+                        <img src="./../assets/wp-content/uploads/2016/12/Slice-3ff-150x150.png" class="avatar user-37-avatar avatar-325 photo" width="325" height="325" alt="Profile picture of Seamus" />
+                        <div id="members-single-user-displayed-name">
+                            Paras </div>
+                    </div>
+
+                </div>
+
+                <div class="col-xs-8 col-sm-10">
+                    <div id="item-nav">
+
+                        <div class="item-list-tabs no-ajax" id="object-nav">
+
+                            <ul>
+                                <li id="activity-personal-li abc"><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['./feed']">Feeds</a></li>
+                                <li id="xprofile-personal-li "><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['./profile']">Profile</a></li>
+                                <li id="friends-personal-li"><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['./connection']">Find Connections </a></li>
+                                <li id="groups-personal-li"><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['./friends']">Friends</a></li>
+                                <li id="forums-personal-li"><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['./settings']">Settings</a></li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </nav>
+        </div>
+        <!-- .row -->
+    </div>
+    <!-- .container-->
+</div>
+------------------------------------------$$$$$$$$$$$$$$$------------------------------------------
+<div class="container">
+
+    <h2><b>Organisations:</b></h2>
+    <div class="container " *ngFor="let res of arr; let i=index">
+        <div class="row" *ngIf="res.market">
+            <div class="card col-lg-4 col-md-4 col-sm-3">
+                <img src="./../../assets/wp-content/uploads/2016/12/2-640x300.jpg" alt="Avatar" style="width:100; height: 100">
+                <div class="container">
+                    <h4><b>{{res.name}}</b></h4>
+                    <h4><b>{{res.market}}</b></h4>
+                    <h4><b>{{res.location}}</b></h4>
+                    <p>{{res.email}} &nbsp;&nbsp;&nbsp;
+                        <button id="but" type="button" (click)="addCompany(res)" class="btn btn-primary btn-md">Follow</button>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+</div>
+
+<div class="container ">
+    <h2><b>Individual:</b></h2>
+    <div class="container " *ngFor="let res of arr; let i=index ">
+        <div class="row " *ngIf="!(res.market) ">
+            <div class="card col-lg-4 col-md-4 col-sm-3 ">
+                <img src="./../../assets/wp-content/uploads/2016/12/2-640x300.jpg " alt="Avatar " style="width:100; height: 100 ">
+                <div class="container ">
+                    <h4><b>{{res.username}}</b></h4>
+                    <p>{{res.email}} &nbsp;&nbsp;&nbsp;
+                        <button type="button " id="butt " (click)="addFriend(res) " class="btn btn-primary btn-md ">Follow</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <br>
+    </div>
+</div>
+=------------=-------------=------------=-
+<div class="container">
+    <div *ngIf="lengthCompany;else content">
+        <h2><b>Followed Organisations:</b></h2>
+        <div class="container " *ngFor="let res of arr2">
+            <div class="row">
+                <div class="card col-lg-4 col-md-4 col-sm-3">
+                    <img src="./../../assets/wp-content/uploads/2016/12/2-640x300.jpg" alt="Avatar" style="width:100; height: 100">
+                    <div class="container">
+                        <h4><b>{{res.name}}</b></h4>
+                        <h4><b>{{res.market}}</b></h4>
+                        <h4><b>{{res.location}}</b></h4>
+                        <p>{{res.email}} &nbsp;&nbsp;&nbsp;</p>
+                        <h3>Refer to Individual</h3>
+                        <p>
+
+                            <select>   
+                                <option selected="selected" disabled>Individuals</option>
+                                <option *ngFor="let res of arr1" id="individual" value={{res.email}}>{{res.name}}</option>
+ 
+                             </select>
+                            <button (click)="refIndividual(res.email)">Refer</button>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+
+    <ng-template #content>
+        <h2><b>You have  followed no Company</b></h2>
+    </ng-template>
+
+
+    <div *ngIf="lengthFriend;else content2">
+        <h2><b>Followed Individuals:</b></h2>
+        <div class="container " *ngFor="let res of arr1">
+            <div class="row">
+                <div class="card col-lg-4 col-md-4 col-sm-3">
+                    <img src="./../../assets/wp-content/uploads/2016/12/2-640x300.jpg" alt="Avatar" style="width:100; height: 100">
+                    <div class="container">
+                        <h4><b>{{res.name}}</b></h4>
+                        <h4><b>{{res.username}}</b></h4>
+                        <p>{{res.email}} &nbsp;&nbsp;&nbsp;</p>
+                        <h3>Refer to Company</h3>
+                        <p>
+
+                            <select>  
+                                 <option selected="selected" disabled>Companies</option>
+                                <option *ngFor="let res of arr2" id="company" value={{res.email}}>{{res.name}}</option>
+ 
+                            </select>
+                            <button (click)="refCompany(res.email)">Refer</button>
+
+                        </p>
+
+
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+
+    <ng-template #content2>
+        <h2><b>You have no followed friends</b></h2>
+    </ng-template>
+
+</div>

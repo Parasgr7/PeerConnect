@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit} from '@angular/core';
 
 import {RegisterService} from './../register/register.service';
-
+declare var $:any;
+  
 @Component({
   selector: 'app-connection',
   templateUrl: './connection.component.html',
@@ -18,7 +19,7 @@ list=[];
 j:any;
 friend=[];
 id:any;
-  constructor(private peer:RegisterService) { }
+  constructor(private peer:RegisterService,private elRef:ElementRef) { }
 
   ngOnInit() {
 
@@ -31,12 +32,13 @@ this.peer.getFriends().subscribe(data=>
                   
             });
  
-    
+   
     
     
 }
-addFriend(val){
 
+addFriend(val){
+ 
     this.peer.setFriend(val).subscribe(data=>{
       console.log(data);
 

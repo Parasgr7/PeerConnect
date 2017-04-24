@@ -30,7 +30,8 @@ import {SettingService} from './setting/setting.service';
  
 import { AngularFireModule } from 'angularfire2';
 import { IndividualComponent } from './individual/individual.component';
-import { CompanyComponent } from './company/company.component'; 			
+import { CompanyComponent } from './company/company.component';
+import { CompleteComponent } from './complete/complete.component'; 			
  
 export const firebaseConfig = {   
   apiKey: "AIzaSyC7_hhXPUQ9sRcD32WLhQYdTPniv1U9E1o",
@@ -56,7 +57,8 @@ export const firebaseConfig = {
     EqualValidator,
     FeedComponent,
     IndividualComponent,
-    CompanyComponent
+    CompanyComponent,
+    CompleteComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +78,10 @@ export const firebaseConfig = {
       {path:'dashboard',component: DashboardComponent,canActivate: [AuthGuard],
         children:[  {path:'',component:FeedComponent},
                     {path:'feed',component:FeedComponent},
-                    {path:'profile',component:ProfileComponent},
+                    {path:'profile',component:ProfileComponent,
+                           children:[  
+                             {path:'complete',component:CompleteComponent},
+                                    ]},
                     {path:'connection',component:ConnectionComponent},
                     {path:'friends',component:FriendComponent},
                     {path:'settings',component:SettingComponent}

@@ -1,4 +1,5 @@
 export interface User {
+    
     username: string; 
     email: string; 
     password: string; 
@@ -6,5 +7,7 @@ export interface User {
     companyname:string;
     market:string;
     location:string;
+    
+    
     
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import{RegisterService} from './../register/register.service';
+
 @Component({
   selector: 'app-setting',
   templateUrl: './setting.component.html',
@@ -8,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 export class SettingComponent implements OnInit {
 
 
-  constructor() { }
+  constructor(private profile:RegisterService) { }
 
   ngOnInit() {
   }
+delete()
+{
+this.profile.delete().subscribe(data=>{
+  console.log(data)
+
+});
+}
 
 }

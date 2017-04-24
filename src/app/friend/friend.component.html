@@ -1,16 +1,13 @@
-<div class="container">
-    <div *ngIf="lengthCompany;else content">
-        <h2><b>Followed Organisations:</b></h2>
-        <div class="container " *ngFor="let res of arr2">
-            <div class="row">
-                <div class="card col-lg-4 col-md-4 col-sm-3">
-                    <img src="./../../assets/wp-content/uploads/2016/12/2-640x300.jpg" alt="Avatar" style="width:100; height: 100">
-                    <div class="container">
-                        <h4><b>{{res.name}}</b></h4>
-                        <h4><b>{{res.market}}</b></h4>
-                        <h4><b>{{res.location}}</b></h4>
-                        <p>{{res.email}} &nbsp;&nbsp;&nbsp;</p>
-                        <h3>Refer to Individual</h3>
+<div class="conatiner">
+    <div class="row">
+        <div *ngIf="lengthCompany;else content">
+            <h2><b>Followed Organisations:</b></h2>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let res of arr2">
+                <div class="card">
+                    <img class="card-img-top" src="./../../assets/wp-content/uploads/2016/12/2-640x300.jpg " alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title">{{res.name}}</h4>
+                        <p class="card-text">{{res.market}}---{{res.location}}</p>
                         <p>
 
                             <select>   
@@ -23,48 +20,42 @@
                         </p>
                     </div>
                 </div>
+
             </div>
-            <br>
         </div>
     </div>
+</div>
+<ng-template #content>
+    <h2><b>You have  followed no Company</b></h2>
+</ng-template>
 
-    <ng-template #content>
-        <h2><b>You have  followed no Company</b></h2>
-    </ng-template>
-
-
-    <div *ngIf="lengthFriend;else content2">
-        <h2><b>Followed Individuals:</b></h2>
-        <div class="container " *ngFor="let res of arr1">
-            <div class="row">
-                <div class="card col-lg-4 col-md-4 col-sm-3">
-                    <img src="./../../assets/wp-content/uploads/2016/12/2-640x300.jpg" alt="Avatar" style="width:100; height: 100">
-                    <div class="container">
-                        <h4><b>{{res.name}}</b></h4>
-                        <h4><b>{{res.username}}</b></h4>
-                        <p>{{res.email}} &nbsp;&nbsp;&nbsp;</p>
-                        <h3>Refer to Company</h3>
+<div class="conatiner">
+    <div class="row">
+        <div *ngIf="lengthCompany;else content">
+            <h2><b>Followed Individuals:</b></h2>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let res of arr1">
+                <div class="card">
+                    <img class="card-img-top" src="./../../assets/wp-content/uploads/2016/12/2-640x300.jpg " alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title">{{res.username}}</h4>
+                        <p class="card-text">{{res.email}}</p>
                         <p>
 
-                            <select>  
-                                 <option selected="selected" disabled>Companies</option>
+                            <select>   
+                                <option selected="selected" disabled>Organisations</option>
                                 <option *ngFor="let res of arr2" id="company" value={{res.email}}>{{res.name}}</option>
  
-                            </select>
+                             </select>
                             <button (click)="refCompany(res.email)">Refer</button>
 
                         </p>
-
-
                     </div>
                 </div>
+
             </div>
-            <br>
         </div>
     </div>
-
-    <ng-template #content2>
-        <h2><b>You have no followed friends</b></h2>
-    </ng-template>
-
 </div>
+<ng-template #content2>
+    <h2><b>You have no followed friends</b></h2>
+</ng-template>

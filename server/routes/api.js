@@ -225,4 +225,34 @@ router.post('/refCompany', passport.authenticate('jwt', { session: false }), (re
 });
 
 
+router.put('/complete/:id', passport.authenticate('jwt', { session: false }), (req, res, next) => {
+
+    User.getUserById(req.params.id, (err, user) => {
+
+        if (user._id) {
+            User.findOneAndUpdate({ _id: req.params.id }, {
+                    $set: {
+                        college: req.body.college,
+                        address: req.body.address,
+                        gender: req.body.gender,
+                        role: req.body.role,
+                        skills: req.body.skills,
+                        resume: req.body.resume,
+                        accomplish: req.body.accomplish
+                    }
+                }, { safe: true, upsert: true, new: true },
+                function(err, model) {});
+        } else {
+            res.json({ msg: 'NOT Done' });
+
+        }
+    });
+});
+
+
+
+
+
+
+
 module.exports = router;

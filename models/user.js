@@ -35,6 +35,27 @@ const UserSchema = mongoose.Schema({
     },
     company: {
         type: Array
+    },
+    college: {
+        type: String
+    },
+    address: {
+        type: String
+    },
+    gender: {
+        type: String
+    },
+    role: {
+        type: String
+    },
+    skills: {
+        type: String
+    },
+    resume: {
+        type: String
+    },
+    accomplish: {
+        type: String
     }
 
 
@@ -65,6 +86,7 @@ module.exports.addUser = function(newUser, callback) {
         });
     });
 }
+
 
 module.exports.comparePassword = function(candidatePassword, hash, callback) {
     bcrypt.compare(candidatePassword, hash, (err, isMatch) => {

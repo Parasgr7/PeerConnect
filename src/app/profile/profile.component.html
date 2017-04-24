@@ -1,7 +1,7 @@
 <div id="printable-content">
     <div class="container">
         <div class="row">
-            <div class="col-lg-9">
+            <div class="col-lg-5">
                 <div id="primary" class="content-area">
                     <main id="main" class="site-main">
 
@@ -49,16 +49,13 @@
                                                                 </ul>
 
                                                             </div>
-                                                            <input id="file" name="file" type="file">
-                                                            <button (click)="upload()" type="button">Upload</button>
 
                                                         </div>
                                                         <img src={{this.dp}} height="600" width="600" />
 
 
-
-
                                                     </div>
+
 
 
 
@@ -84,11 +81,22 @@
                 </div>
             </div>
             <!--.col-lg-9-->
+
+            <div class="col-lg-4">
+
+                <div id="secondary" class="widget-area">
+
+
+                    <router-outlet></router-outlet>
+
+                </div>
+            </div>
+
             <div class="col-lg-3">
 
                 <div id="secondary" class="widget-area">
 
-                    <button>Complete your Profile</button>
+                    <button [routerLink]="['./complete']">Complete your Profile</button>
 
                     <section id="bp_core_members_widget-5" class="widget widget_bp_core_members_widget buddypress widget">
                         <h2 class="widget-title">Suggestions</h2>
