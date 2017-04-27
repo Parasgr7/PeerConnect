@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, AfterViewInit} from '@angular
 
 import {RegisterService} from './../register/register.service';
 declare var $:any;
-  
+
 @Component({
   selector: 'app-connection',
   templateUrl: './connection.component.html',
@@ -52,7 +52,21 @@ addCompany(val){
 
 }
 
+ ngAfterViewInit() {
+        
+        $('.changeText').click(function(){
+        var $this = $(this);
+        console.log('hell');
 
+        $this.toggleClass('changeText');
+        if($this.hasClass('changeText')){
+            $this.text('Follow');         
+        } else {
+            $this.text('Following...');
+          $('button').prop('disabled', true);
+        }
+    });
+    }
  
 
   

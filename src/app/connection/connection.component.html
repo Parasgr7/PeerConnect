@@ -9,7 +9,7 @@
                     <h5>Company</h5>
                     <h5>Market:</h5>{{res.market}}
                     <h5>Location:</h5> {{res.location}} {{res.email}}
-                    <button id="but " type="button " (click)="addCompany(res) " class="btn btn-primary btn-sm ">Follow</button>
+                    <button id="but" class="changeText" (click)="addCompany(res) " class="btn btn-primary btn-sm ">Follow</button>
                 </div>
             </div>
             <div class="card" *ngIf="!res.market">
@@ -18,7 +18,7 @@
                     <h4 class="card-title ">{{res.username}}</h4>
                     <hr>
                     <h5>Student</h5>
-                    {{res.email}} <button id="but " type="button " (click)="addFriend(res) " class="btn btn-primary btn-sm ">Follow</button>
+                    {{res.email}} <button id="but" class="changeText" (click)="addFriend(res)" class="btn btn-primary btn-sm ">Follow</button>
                 </div>
             </div>
         </div>

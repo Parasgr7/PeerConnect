@@ -64,10 +64,7 @@ fileList : FirebaseListObservable<Image[]>;
 onsubmit(value:Complete)
 {
 console.log(value);
-this.complete.complete(value).subscribe(data=>{
-
-});
-
+this.complete.complete(value).subscribe(data=>{});
 }
 
 

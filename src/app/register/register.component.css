@@ -16,3 +16,8 @@ button:focus {
     -moz-box-shadow: inset 0px 0px 4px #ccc;
     box-shadow: inset 0px 0px 4px #ccc;
 }
+
+#printable-content {
+    padding-top: -80px;
+    padding-bottom: -80px;
+}
