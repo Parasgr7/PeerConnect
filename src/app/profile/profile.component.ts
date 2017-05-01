@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { Observable } from 'rxjs';
 import * as firebase from "firebase";
+import {Location} from '@angular/common';
 
 
 interface Image {
@@ -32,12 +33,12 @@ dp:string;
 fileList : FirebaseListObservable<Image[]>;
     imageList : Observable<Image[]>;
 
-  constructor(private profile:RegisterService,private router:Router,public af: AngularFire) { }
+  constructor(private profile:RegisterService,private router:Router,public af: AngularFire,private _location: Location) { }
 
   ngOnInit() {
     this.profile.getProfile().subscribe(profile=>{
-      this.data=profile.user;
-      console.log(profile.user._id);
+      this.data=profile
+      
     },err=>{
       console.log(err);
       return false;
@@ -75,5 +76,7 @@ fileList : FirebaseListObservable<Image[]>;
   }
  
 
-
+ backClicked() {
+        this._location.back();
+    }
 }

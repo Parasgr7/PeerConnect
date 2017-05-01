@@ -23,39 +23,50 @@ const UserSchema = mongoose.Schema({
 
     },
     market: {
-        type: String
+        type: String,
+        default: null
 
     },
 
     location: {
-        type: String
+        type: String,
+        default: null
     },
     friend: {
-        type: Array
+        type: Array,
+        default: null
     },
     company: {
-        type: Array
+        type: Array,
+        default: null
     },
     college: {
-        type: String
+        type: String,
+        default: null
     },
     address: {
-        type: String
+        type: String,
+        default: null
     },
     gender: {
-        type: String
+        type: String,
+        default: null
     },
     role: {
-        type: String
+        type: String,
+        default: null
     },
     skills: {
-        type: String
+        type: String,
+        default: null
     },
     resume: {
-        type: String
+        type: String,
+        default: null
     },
     accomplish: {
-        type: String
+        type: String,
+        default: null
     }
 
 

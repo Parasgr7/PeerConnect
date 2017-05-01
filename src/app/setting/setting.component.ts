@@ -30,7 +30,7 @@ this.profile.delete().subscribe(data=>{
         if($this.hasClass('SeeMore2')){
             $this.text('See More');         
         } else {
-            $this.text('Fuckoff');
+            $this.text('Off');
           $('button').prop('disabled', true);
         }
     });

@@ -110,8 +110,20 @@ router.post('/authenticate', (req, res, next) => {
 });
 
 
-router.get('/profile', passport.authenticate('jwt', { session: false }), (req, res) => {
-    res.json({ user: req.user });
+router.get('/profile/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
+
+    User.getUserById(req.params.id, (err, user) => {
+
+        if (user._id) {
+
+
+            User.findOne({ '_id': req.params.id }, function(err, obj) { res.send(obj) });
+
+        } else {
+            res.json({ success: false });
+
+        }
+    });
 });
 
 router.get('/friends', passport.authenticate('jwt', { session: false }), (req, res, next) => {
@@ -250,8 +262,34 @@ router.put('/complete/:id', passport.authenticate('jwt', { session: false }), (r
 });
 
 
+router.post('/followFriend/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
+
+    User.getUserById(req.params.id, (err, user) => {
+
+        if (user._id) {
+            User.find({ friend: { $elemMatch: { _id: req.body.id } } });
+
+        } else {
+            res.json({ msg: 'NOT Done' });
+
+        }
+    });
+});
+
+router.post('/followCompany/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
+
+    User.getUserById(req.params.id, (err, user) => {
+
+        if (user._id) {
+            User.find({ company: { $elemMatch: { _id: req.body.id } } });
 
 
+        } else {
+            res.json({ msg: 'NOT Done' });
+
+        }
+    });
+});
 
 
 

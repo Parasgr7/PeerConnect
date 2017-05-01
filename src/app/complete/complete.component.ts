@@ -25,6 +25,7 @@ public user: Complete;
 
 @Input() folder: string;
 dp:string;
+data=[];
 fileList : FirebaseListObservable<Image[]>;
     imageList : Observable<Image[]>;
   constructor(private complete:RegisterService,private router:Router,public af: AngularFire) { }
@@ -40,7 +41,15 @@ fileList : FirebaseListObservable<Image[]>;
                         accomplish:'',
 
                     }
-  }
+                     this.complete.getProfile().subscribe(profile=>{
+                    this.data=profile
+      console.log(this.data);
+                        },err=>{
+                        console.log(err);
+                        return false;
+                        
+                        });
+            }
    upload() {
         let storageRef = firebase.storage().ref();
 

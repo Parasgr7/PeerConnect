@@ -19,7 +19,11 @@ list=[];
 j:any;
 friend=[];
 id:any;
-  constructor(private peer:RegisterService,private elRef:ElementRef) { }
+followC:boolean;
+followI:boolean;
+  constructor(private peer:RegisterService,private elRef:ElementRef) {
+  
+   }
 
   ngOnInit() {
 
@@ -32,41 +36,20 @@ this.peer.getFriends().subscribe(data=>
                   
             });
  
-   
-    
     
 }
 
 addFriend(val){
- 
-    this.peer.setFriend(val).subscribe(data=>{
-      console.log(data);
-
-    });
+    this.peer.setFriend(val).subscribe();
+   
 }
 
 addCompany(val){
-
-    this.peer.setCompany(val).subscribe(data=>{});
-
-
+    this.peer.setCompany(val).subscribe();
+   
 }
 
- ngAfterViewInit() {
-        
-        $('.changeText').click(function(){
-        var $this = $(this);
-        console.log('hell');
 
-        $this.toggleClass('changeText');
-        if($this.hasClass('changeText')){
-            $this.text('Follow');         
-        } else {
-            $this.text('Following...');
-          $('button').prop('disabled', true);
-        }
-    });
-    }
  
 
   

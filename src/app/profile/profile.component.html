@@ -1,7 +1,7 @@
 <div id="printable-content">
     <div class="container">
         <div class="row">
-            <div class="col-lg-5">
+            <div class="col-lg-9">
                 <div id="primary" class="content-area">
                     <main id="main" class="site-main">
 
@@ -46,6 +46,7 @@
                                                                 <ul class="list-group">
                                                                     <li class="list-group-item">Username:{{data.username}}</li>
                                                                     <li class="list-group-item">Email:{{data.email}}</li>
+                                                                    <li class="list-group-item">Resume:{{data.resume}}</li>
                                                                 </ul>
 
                                                             </div>
@@ -82,21 +83,37 @@
             </div>
             <!--.col-lg-9-->
 
-            <div class="col-lg-4">
-
-                <div id="secondary" class="widget-area">
-
-
-                    <router-outlet></router-outlet>
-
+            <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title" id="exampleModalLongTitle">Describe yourself</h3>
+                            <button type="button" class="close" (click)="backClicked()" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                        </div>
+                        <div class="modal-body">
+                            <router-outlet></router-outlet>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" (click)="backClicked()" data-dismiss="modal">Go Back</button>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+
+
+
+
 
             <div class="col-lg-3">
 
                 <div id="secondary" class="widget-area">
+                    <button type="button" [routerLink]="['./complete']" class="btn btn-primary" data-toggle="modal" data-target="#Modal">
+    Complete your Profile
+</button>
 
-                    <button [routerLink]="['./complete']">Complete your Profile</button>
 
                     <section id="bp_core_members_widget-5" class="widget widget_bp_core_members_widget buddypress widget">
                         <h2 class="widget-title">Suggestions</h2>

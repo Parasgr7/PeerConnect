@@ -9,7 +9,12 @@
                     <h5>Company</h5>
                     <h5>Market:</h5>{{res.market}}
                     <h5>Location:</h5> {{res.location}} {{res.email}}
-                    <button id="but" class="changeText" (click)="addCompany(res) " class="btn btn-primary btn-sm ">Follow</button>
+                    <div *ngIf="!followC">
+                        <button id="but" class="changeText" (click)="addCompany(res) " class="btn btn-primary btn-sm ">Follow</button>
+                    </div>
+                    <div *ngIf="followC">
+                        <button>Following</button>
+                    </div>
                 </div>
             </div>
             <div class="card" *ngIf="!res.market">

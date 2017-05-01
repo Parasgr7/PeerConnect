@@ -75,7 +75,7 @@ getProfile(){
    
    headers.append('Content-Type','application/json');
    
-    return this.http.get('http://localhost:3000/api/profile',{headers:headers})
+    return this.http.get('http://localhost:3000/api/profile/'+this.id.id,{headers:headers})
           .map(res=>res.json());
 
 }
@@ -129,6 +129,7 @@ refCompany(val1,val2,val3):Observable<any>
 
 
 }
+
 refIndividual(val1,val2):Observable<any>
 {const body=JSON.stringify({"mail1": val1, "mail2": val2,"user":this.id.name});
    let headers= new Headers();
@@ -140,6 +141,31 @@ refIndividual(val1,val2):Observable<any>
     return this.http.post('http://localhost:3000/api/refIndividual',body,{headers:headers})
           .map(res=>res.json());
 
+
+}
+
+followFriend(id)
+{
+  const body=JSON.stringify({"id":id});
+let headers= new Headers();
+  this.loadToken();
+  headers.append('Authorization',this.authToken);
+   
+   headers.append('Content-Type','application/json');
+
+    return this.http.post('http://localhost:3000/api/followFriend/'+this.id.id,body,{headers:headers}).map((res:Response)=>res.json());
+
+}
+followCompany(id)
+{
+  const body=JSON.stringify({"id":id});
+let headers= new Headers();
+  this.loadToken();
+  headers.append('Authorization',this.authToken);
+   
+   headers.append('Content-Type','application/json');
+
+    return this.http.post('http://localhost:3000/api/followCompany/'+this.id.id,body,{headers:headers}).map((res:Response)=>res.json());
 
 }
 
