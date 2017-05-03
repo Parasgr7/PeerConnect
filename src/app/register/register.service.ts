@@ -183,6 +183,35 @@ complete(val1)
           .map(res=>res.json());
 
 }
+complete1(val1)
+{
+      const body= JSON.stringify(val1);
+     
+        let headers= new Headers();
+        this.loadToken();
+        headers.append('Content-Type','application/json'); 
+
+  headers.append('Authorization',this.authToken);
+   
+          return this.http.put('http://localhost:3000/api/complete1/'+this.id.id,body,{headers:headers})
+          .map(res=>res.json());
+
+}
+
+image(dp)
+{
+  const body= JSON.stringify({"dp":dp});
+
+        let headers= new Headers();
+        this.loadToken();
+
+        headers.append('Content-Type','application/json'); 
+        headers.append('Authorization',this.authToken);
+   
+          return this.http.put('http://localhost:3000/api/image/'+this.id.id,body,{headers:headers})
+          .map(res=>res.json());
+          
+}
 
 
 delete()

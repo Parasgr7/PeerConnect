@@ -20,7 +20,7 @@ interface Image {
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-data:Object;
+data=[];
 arr:Object;
 i:any;
 picks = [];
@@ -37,7 +37,8 @@ fileList : FirebaseListObservable<Image[]>;
 
   ngOnInit() {
     this.profile.getProfile().subscribe(profile=>{
-      this.data=profile
+      this.data=profile;
+      console.log(this.data);
       
     },err=>{
       console.log(err);

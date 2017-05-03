@@ -1,59 +1,47 @@
-<div *ngIf="!data.market">
+<div *ngIf="data.market">
 
     <div class="card">
         <h4 class="card-header">
-            About Me
+            Company Profile
         </h4>
         <div class="card-block">
             <p class="card-text">
-                <form #userform="ngForm" method="POST" novalidate (ngSubmit)="onsubmit(userform.value)  ">
+                <form #userform="ngForm" novalidate (ngSubmit)="onsubmit1(userform.value)  ">
 
                     <div>
 
-                        <input type="text" name="college" required placeholder="College/University Name" #uname7="ngModel" [ngModel]="user.college">
+                        <input type="text" name="jobs" required placeholder="Jobs Offered" #jobs="ngModel" [ngModel]="user1.jobs">
                     </div>
 
                     <div>
 
-                        <input type="text" name="address" required placeholder="Address" #uname6="ngModel" [ngModel]="user.address">
-                    </div>
-
-                    <div>
-                        <h5>Gender</h5>
-                        <select name="gender" required placeholder="gender" #uname5="ngModel" [ngModel]="user.gender">
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                      
-                </select>
+                        <input type="text" name="website" required placeholder="Company Website" #web="ngModel" [ngModel]="user1.website">
                     </div>
                     <div>
-                        <h5>Role</h5>
-                        <select name="role" required #uname4="ngModel" [ngModel]="user.role">
-                        <option value="Software Designer">Software Designer</option>
-                        <option value="Designer">Designer</option>
-                        <option value="Operations">Operations</option>
-                        <option value="Sales">Sales</option>
-                        <option value="Marketting">Marketting</option>
-                        <option value="Management">Management</option>
+                        <h5>Size</h5>
+                        <select name="size" required #size="ngModel" [ngModel]="user1.size">
+                        <option selected disabled>Select size</option>
+                        <option value="1-10 employees">1-10 employees</option>
+                        <option value="11-50 employees">11-50 employees</option>
+                        <option value="51-200 employees">51-200 employees</option>
+                        <option value="201-500 employees">201-500 employees</option>
+                        <option value="501-1000 employees">501-1000 employees</option>
+                        <option value="1000+ employees">1000+ employees</option>
                       
                 </select>
                     </div>
 
 
                     <div>
+                        <h5>Company Logo</h5>
                         <input id="file" name="file" type="file"></div>
                     <div>
                         <br>
-                        <textarea name="skills" placeholder="Skills" required #uname3="ngModel" [ngModel]="user.skills"></textarea>
+                        <textarea name="product" placeholder="Products" required #product="ngModel" [ngModel]="user1.product"></textarea>
                     </div>
                     <div>
 
-                        <textarea name="resume" placeholder="Mini Resume" required #uname2="ngModel" [ngModel]="user.resume"></textarea>
-                    </div>
-
-                    <div>
-
-                        <textarea name="accomplish" placeholder="Most Impressive Accomplishment" required #uname1="ngModel" [ngModel]="user.accomplish"></textarea>
+                        <textarea name="whyus" placeholder="Why Us" required #us="ngModel" [ngModel]="user1.whyus"></textarea>
                     </div>
                     <div>
                         <button type="submit" (click)="upload()" [disabled]="!userform.valid" class="btn btn-success">Submit</button>
@@ -67,14 +55,14 @@
 </div>
 
 
-<div *ngIf="data.market">
+<div *ngIf="!data.market">
     <div class="card">
         <h4 class="card-header">
-            About Me
+            Individual Profile
         </h4>
         <div class="card-block">
             <p class="card-text">
-                <form #user="ngForm" method="POST" novalidate (ngSubmit)="onsubmit1(user.value)  ">
+                <form #user="ngForm" novalidate (ngSubmit)="onsubmit1(user.value)  ">
 
                     <div>
 
@@ -124,7 +112,7 @@
                         <textarea name="accomplish" placeholder="Most Impressive Accomplishment" required #uname1="ngModel" [ngModel]="user.accomplish"></textarea>
                     </div>
                     <div>
-                        <button type="submit" (click)="upload()" [disabled]="!userform.valid" class="btn btn-success">Submit</button>
+                        <button type="submit" (click)="upload()" [disabled]="!user.valid" class="btn btn-success">Submit</button>
                     </div>
 
 

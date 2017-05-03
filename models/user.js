@@ -67,8 +67,31 @@ const UserSchema = mongoose.Schema({
     accomplish: {
         type: String,
         default: null
+    },
+    jobs: {
+        type: String,
+        default: null
+    },
+    website: {
+        type: String,
+        default: null
+    },
+    size: {
+        type: String,
+        default: null
+    },
+    product: {
+        type: String,
+        default: null
+    },
+    whyus: {
+        type: String,
+        default: null
+    },
+    image: {
+        type: String,
+        default: null
     }
-
 
 });
 const User = module.exports = mongoose.model('datas', UserSchema);

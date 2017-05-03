@@ -27,6 +27,8 @@ import { SettingComponent } from './setting/setting.component';
 import {FriendService} from './feed/friend.service';
 import {SettingService} from './setting/setting.service';
 
+
+import { DeactivateComponent } from './deactivate/deactivate.component';
  
 import { AngularFireModule } from 'angularfire2';
 import { IndividualComponent } from './individual/individual.component';
@@ -84,7 +86,8 @@ export const firebaseConfig = {
                                     ]},
                     {path:'connection',component:ConnectionComponent},
                     {path:'friends',component:FriendComponent},
-                    {path:'settings',component:SettingComponent}
+                    {path:'settings',component:SettingComponent,
+                  children:[{path:'deactivate',component:DeactivateComponent}]}
                     
         
                 ]

@@ -41,12 +41,13 @@
 
                                                         <div class="activity-inner">
 
-                                                            <div *ngIf="data">
+                                                            <div *ngIf="data.market">
                                                                 <h2 class="page-header">{{data.name}}</h2>
                                                                 <ul class="list-group">
-                                                                    <li class="list-group-item">Username:{{data.username}}</li>
+                                                                    <li class="list-group-item">Username:{{data.jobs}}</li>
                                                                     <li class="list-group-item">Email:{{data.email}}</li>
                                                                     <li class="list-group-item">Resume:{{data.resume}}</li>
+                                                                    <li class="list-group-item"><img src={{data.image}} height="200" width="200"></li>
                                                                 </ul>
 
                                                             </div>

@@ -65,7 +65,7 @@
 
 
         <label for="field_1">Location</label>
-        <input name="location" type="text" aria-required="true" required placeholder="Enter Company Name" #location="ngModel" [ngModel]="user.location" class="flocks_bp_edit_field">
+        <input name="location" type="text" aria-required="true" required placeholder="Enter Company Location" #location="ngModel" [ngModel]="user.location" class="flocks_bp_edit_field">
 
         <div *ngIf="location.errors && (location.dirty||location.touched)">
             <div [hidden]="!location.errors.required">

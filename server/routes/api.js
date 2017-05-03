@@ -262,6 +262,47 @@ router.put('/complete/:id', passport.authenticate('jwt', { session: false }), (r
 });
 
 
+router.put('/complete1/:id', passport.authenticate('jwt', { session: false }), (req, res, next) => {
+
+    User.getUserById(req.params.id, (err, user) => {
+
+        if (user._id) {
+            User.findOneAndUpdate({ _id: req.params.id }, {
+                    $set: {
+                        jobs: req.body.jobs,
+                        website: req.body.website,
+                        size: req.body.size,
+                        product: req.body.product,
+                        whyus: req.body.whyus
+                    }
+                }, { safe: true, upsert: true, new: true },
+                function(err, model) {});
+
+        } else {
+            res.json({ msg: 'NOT Done' });
+
+        }
+    });
+});
+
+
+router.put('/image/:id', passport.authenticate('jwt', { session: false }), (req, res, next) => {
+    User.getUserById(req.params.id, (err, user) => {
+
+        if (user._id) {
+            User.findOneAndUpdate({ _id: req.params.id }, {
+                    $set: {
+                        image: req.body.dp
+
+                    }
+                }, { safe: true, upsert: true, new: true },
+                function(err, model) {});
+        } else {
+            res.json({ msg: 'NOT Done' });
+
+        }
+    });
+});
 router.post('/followFriend/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
 
     User.getUserById(req.params.id, (err, user) => {
