@@ -22,7 +22,7 @@ export class RegisterService {
    let headers= new Headers();
    headers.append('Content-Type','application/json'); 
    
-    return this.http.post('http://localhost:3000/api/register',body,{headers:headers})
+    return this.http.post(' api/register',body,{headers:headers})
           .map(res=>res.json());
 
 
@@ -36,7 +36,7 @@ export class RegisterService {
 
    headers.append('Content-Type','application/json'); 
    
-    return this.http.put('http://localhost:3000/api/setFriend/'+this.id.id,body,{headers:headers}).map(res=>res.json());
+    return this.http.put(' api/setFriend/'+this.id.id,body,{headers:headers}).map(res=>res.json());
 
 
   }
@@ -49,7 +49,7 @@ export class RegisterService {
 
    headers.append('Content-Type','application/json'); 
    
-    return this.http.put('http://localhost:3000/api/setCompany/'+this.id.id,body,{headers:headers}).map(res=>res.json());
+    return this.http.put(' api/setCompany/'+this.id.id,body,{headers:headers}).map(res=>res.json());
 
 
   }
@@ -63,7 +63,7 @@ login(value:Entry)
 
    headers.append('Content-Type','application/json');
    
-    return this.http.post('http://localhost:3000/api/authenticate',body,{headers:headers})
+    return this.http.post(' api/authenticate',body,{headers:headers})
           .map(res=>res.json());
 
 
@@ -75,7 +75,7 @@ getProfile(){
    
    headers.append('Content-Type','application/json');
    
-    return this.http.get('http://localhost:3000/api/profile/'+this.id.id,{headers:headers})
+    return this.http.get(' api/profile/'+this.id.id,{headers:headers})
           .map(res=>res.json());
 
 }
@@ -89,7 +89,7 @@ getProfile(){
    
    headers.append('Content-Type','application/json');
 
-    return this.http.get('http://localhost:3000/api/friends',{headers:headers}).map((res:Response)=>res.json());
+    return this.http.get(' api/friends',{headers:headers}).map((res:Response)=>res.json());
 
   }
 
@@ -101,7 +101,7 @@ getProfile(){
    
    headers.append('Content-Type','application/json');
 
-    return this.http.get('http://localhost:3000/api/fetchFriend/'+this.id.id,{headers:headers}).map((res:Response)=>res.json().friend);
+    return this.http.get(' api/fetchFriend/'+this.id.id,{headers:headers}).map((res:Response)=>res.json().friend);
 
   }
 fetchCompany():Observable<any> 
@@ -112,7 +112,7 @@ fetchCompany():Observable<any>
    
    headers.append('Content-Type','application/json');
 
-    return this.http.get('http://localhost:3000/api/fetchCompany/'+this.id.id,{headers:headers}).map((res:Response)=>res.json().company);
+    return this.http.get(' api/fetchCompany/'+this.id.id,{headers:headers}).map((res:Response)=>res.json().company);
 
   }
 
@@ -124,7 +124,7 @@ refCompany(val1,val2,val3):Observable<any>
 
   headers.append('Authorization',this.authToken);
    
-    return this.http.post('http://localhost:3000/api/refCompany',body,{headers:headers})
+    return this.http.post(' api/refCompany',body,{headers:headers})
           .map(res=>res.json());
 
 
@@ -138,7 +138,7 @@ refIndividual(val1,val2):Observable<any>
 
   headers.append('Authorization',this.authToken);
    
-    return this.http.post('http://localhost:3000/api/refIndividual',body,{headers:headers})
+    return this.http.post(' api/refIndividual',body,{headers:headers})
           .map(res=>res.json());
 
 
@@ -153,7 +153,7 @@ let headers= new Headers();
    
    headers.append('Content-Type','application/json');
 
-    return this.http.post('http://localhost:3000/api/followFriend/'+this.id.id,body,{headers:headers}).map((res:Response)=>res.json());
+    return this.http.post(' api/followFriend/'+this.id.id,body,{headers:headers}).map((res:Response)=>res.json());
 
 }
 followCompany(id)
@@ -165,7 +165,7 @@ let headers= new Headers();
    
    headers.append('Content-Type','application/json');
 
-    return this.http.post('http://localhost:3000/api/followCompany/'+this.id.id,body,{headers:headers}).map((res:Response)=>res.json());
+    return this.http.post(' api/followCompany/'+this.id.id,body,{headers:headers}).map((res:Response)=>res.json());
 
 }
 
@@ -179,7 +179,7 @@ complete(val1)
 
   headers.append('Authorization',this.authToken);
    
-          return this.http.put('http://localhost:3000/api/complete/'+this.id.id,body,{headers:headers})
+          return this.http.put(' api/complete/'+this.id.id,body,{headers:headers})
           .map(res=>res.json());
 
 }
@@ -193,7 +193,7 @@ complete1(val1)
 
   headers.append('Authorization',this.authToken);
    
-          return this.http.put('http://localhost:3000/api/complete1/'+this.id.id,body,{headers:headers})
+          return this.http.put(' api/complete1/'+this.id.id,body,{headers:headers})
           .map(res=>res.json());
 
 }
@@ -208,7 +208,7 @@ image(dp)
         headers.append('Content-Type','application/json'); 
         headers.append('Authorization',this.authToken);
    
-          return this.http.put('http://localhost:3000/api/image/'+this.id.id,body,{headers:headers})
+          return this.http.put(' api/image/'+this.id.id,body,{headers:headers})
           .map(res=>res.json());
           
 }
@@ -223,7 +223,7 @@ delete1()
 
         headers.append('Authorization',this.authToken);
    
-          return this.http.get('http://localhost:3000/api/delete/'+this.id.id,{headers:headers}).map(res=>res.json());
+          return this.http.get(' api/delete/'+this.id.id,{headers:headers}).map(res=>res.json());
 
 
 }
