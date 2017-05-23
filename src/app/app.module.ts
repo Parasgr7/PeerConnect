@@ -6,6 +6,9 @@ import{BackendService} from'./backend.service';
 import {RouterModule,Routes} from '@angular/router';
 import {RegisterService} from './register/register.service';
 
+
+import{TranslateService} from 'ng2-translate';
+
 import{EqualValidator} from './custom-validator';
 
 import {LoginService} from './login/login.service';
@@ -25,15 +28,13 @@ import { FeedComponent } from './feed/feed.component';
 import { FriendComponent } from './friend/friend.component';
 import { SettingComponent } from './setting/setting.component';
 import {FriendService} from './feed/friend.service';
-import {SettingService} from './setting/setting.service';
-
-
-import { DeactivateComponent } from './deactivate/deactivate.component';
- 
+import {SettingService} from './setting/setting.service'; 
 import { AngularFireModule } from 'angularfire2';
 import { IndividualComponent } from './individual/individual.component';
 import { CompanyComponent } from './company/company.component';
-import { CompleteComponent } from './complete/complete.component'; 			
+import { CompleteComponent } from './complete/complete.component';
+import { DeleteComponent } from './delete/delete.component';
+import { ChangeComponent } from './change/change.component'; 			
  
 export const firebaseConfig = {   
   apiKey: "AIzaSyC7_hhXPUQ9sRcD32WLhQYdTPniv1U9E1o",
@@ -60,7 +61,9 @@ export const firebaseConfig = {
     FeedComponent,
     IndividualComponent,
     CompanyComponent,
-    CompleteComponent
+    CompleteComponent,
+    DeleteComponent,
+    ChangeComponent
   ],
   imports: [
     BrowserModule,
@@ -87,7 +90,8 @@ export const firebaseConfig = {
                     {path:'connection',component:ConnectionComponent},
                     {path:'friends',component:FriendComponent},
                     {path:'settings',component:SettingComponent,
-                  children:[{path:'deactivate',component:DeactivateComponent}]}
+                  children:[{path:'delete',component:DeleteComponent},
+                  {path:'change',component:ChangeComponent}]}
                     
         
                 ]

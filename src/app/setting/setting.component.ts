@@ -15,25 +15,7 @@ export class SettingComponent implements OnInit {
 
   ngOnInit() {
   }
-delete()
-{
-this.profile.delete().subscribe(data=>{
-  console.log(data)
-
-});
-}
- ngAfterViewInit() {
-        
-        $('.SeeMore2').click(function(){
-        var $this = $(this);
-        $this.toggleClass('SeeMore2');
-        if($this.hasClass('SeeMore2')){
-            $this.text('See More');         
-        } else {
-            $this.text('Off');
-          $('button').prop('disabled', true);
-        }
-    });
-    }
 
 }
+ 
+

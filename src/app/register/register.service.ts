@@ -214,17 +214,16 @@ image(dp)
 }
 
 
-delete()
+delete1()
 {
 
         let headers= new Headers();
         this.loadToken();
         headers.append('Content-Type','application/json'); 
 
-  headers.append('Authorization',this.authToken);
+        headers.append('Authorization',this.authToken);
    
-          return this.http.get('http://localhost:3000/api/delete',{headers:headers})
-          .map(res=>res.json());
+          return this.http.get('http://localhost:3000/api/delete/'+this.id.id,{headers:headers}).map(res=>res.json());
 
 
 }

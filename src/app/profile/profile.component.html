@@ -20,17 +20,9 @@
                                         <div class="item-list-tabs no-ajax" id="subnav">
 
                                         </div>
-                                        <!-- .item-list-tabs -->
-
-
-
                                         <div class="activity">
 
-
-
-
                                             <ul id="activity-stream" class="activity-list item-list">
-
 
                                                 <li class="bbpress bbp_reply_create activity-item" id="activity-700">
 
@@ -41,7 +33,7 @@
 
                                                         <div class="activity-inner">
 
-                                                            <div *ngIf="data.market">
+                                                            <div *ngIf="!data.market">
                                                                 <h2 class="page-header">{{data.name}}</h2>
                                                                 <ul class="list-group">
                                                                     <li class="list-group-item">Username:{{data.jobs}}</li>
@@ -53,7 +45,6 @@
                                                             </div>
 
                                                         </div>
-                                                        <img src={{this.dp}} height="600" width="600" />
 
 
                                                     </div>

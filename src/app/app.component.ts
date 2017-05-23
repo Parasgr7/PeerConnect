@@ -1,5 +1,6 @@
 
 import { Component,OnInit } from '@angular/core';
+import{TranslateService} from 'ng2-translate';
 
 @Component({
   selector: 'app-root',
@@ -11,11 +12,22 @@ export class AppComponent implements OnInit {
 
   
     public message;
-    constructor(){}
+    constructor()
+    {
+       /* translate.addLangs(['en','fr','cn','hi']);
+        translate.setDefaultLang('en');
+
+        let browserLang=translate.getBrowserLang();
+        //translate.use(browserLang.match(/en|fr|cn|hi/)? browserLang:'en');
+    */
+  
+    }
+    
+    
     ngOnInit() 
     {
 
-        }
+    }
 
 
 

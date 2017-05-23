@@ -332,6 +332,21 @@ router.post('/followCompany/:id', passport.authenticate('jwt', { session: false 
     });
 });
 
+router.get('/delete/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
+    console.log(req.params.id);
+    User.getUserById(req.params.id, (err, user) => {
 
+        if (user._id) {
+            User.remove({ _id: req.params.id }, function(err, callback) {
+
+                console.log('Done');
+            });
+
+        } else {
+            res.json({ success: false });
+
+        }
+    });
+});
 
 module.exports = router;
