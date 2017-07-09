@@ -6,9 +6,6 @@ import{BackendService} from'./backend.service';
 import {RouterModule,Routes} from '@angular/router';
 import {RegisterService} from './register/register.service';
 
-
-import{TranslateService} from 'ng2-translate';
-
 import{EqualValidator} from './custom-validator';
 
 import {LoginService} from './login/login.service';

@@ -1,9 +1,9 @@
 import { Component, OnInit,Input} from '@angular/core';
 import{RegisterService} from './../register/register.service';
 import { Router } from '@angular/router';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+// import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { Observable } from 'rxjs';
-import * as firebase from "firebase";
+// import * as firebase from "firebase";
 import {Location} from '@angular/common';
 
 
@@ -20,7 +20,7 @@ interface Image {
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-data=[];
+data;
 arr:Object;
 i:any;
 picks = [];
@@ -30,15 +30,14 @@ ranArr=[];
 
 @Input() folder: string;
 dp:string;
-fileList : FirebaseListObservable<Image[]>;
-    imageList : Observable<Image[]>;
+// fileList : FirebaseListObservable<Image[]>;
+    // imageList : Observable<Image[]>;
 
-  constructor(private profile:RegisterService,private router:Router,public af: AngularFire,private _location: Location) { }
+  constructor(private profile:RegisterService,private router:Router,private _location: Location) { }
 
   ngOnInit() {
     this.profile.getProfile().subscribe(profile=>{
       this.data=profile;
-      console.log(this.data);
       
     },err=>{
       console.log(err);

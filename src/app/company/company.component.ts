@@ -15,7 +15,7 @@ export class CompanyComponent implements OnInit {
   constructor(private register:RegisterService,private router:Router) { }
 
   ngOnInit() {
-     this.user = {      
+     this.user = {      name:'',
                         companyname:'',
                         username: '',
                         email: '',

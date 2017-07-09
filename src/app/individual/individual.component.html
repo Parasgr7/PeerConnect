@@ -60,13 +60,13 @@
         <label for="field_1">Name</label>
 
 
-        <input id="field_1" name="name" type="text" aria-required="true" required minlength="4" maxlength="10" placeholder="Enter Name" #name="ngModel" [ngModel]="user.name" class="flocks_bp_edit_field">
+        <input id="field_1" name="name" type="text" aria-required="true" required minlength="4" maxlength="10" placeholder="Enter Name" #nam="ngModel" [ngModel]="user.name" class="flocks_bp_edit_field">
 
-        <div *ngIf="name.errors && (name.dirty||name.touched)">
-            <div [hidden]="!name.errors.required">
+        <div *ngIf="nam.errors && (nam.dirty||nam.touched)">
+            <div [hidden]="!nam.errors.required">
                 <small><i>*Please enter your name</i></small>
             </div>
-            <div [hidden]="!name.errors.minlength">
+            <div [hidden]="!nam.errors.minlength">
                 <small><i>*Please enter atleast 4 character</i></small>
 
             </div>

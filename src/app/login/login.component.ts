@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Entry} from './../entry';
 import {RegisterService} from './../register/register.service';
-import{FlashMessageService} from 'angular2-flash-message';
 import {Router} from '@angular/router';
 @Component({
   selector: 'app-login',
